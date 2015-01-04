@@ -11,6 +11,7 @@ namespace KZTAPP3
         static void Main(string[] args)
         {
             Console.WriteLine("Hi Everyone!");
+            Console.WriteLine("HAHAHAHA");
         }
     }
 }
