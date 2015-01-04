@@ -16,6 +16,7 @@ namespace KZTAPP3
             Console.WriteLine("44444444");
             Console.WriteLine("66666666");
             Console.WriteLine("77777777");
+            Console.WriteLine("99999999");
         }
     }
 }
