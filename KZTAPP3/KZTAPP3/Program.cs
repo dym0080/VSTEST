@@ -10,14 +10,13 @@ namespace KZTAPP3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("11111111");
-            Console.WriteLine("22222222");
-            Console.WriteLine("33333333");
-            Console.WriteLine("44444444");
-            Console.WriteLine("66666666");
-            Console.WriteLine("77777777");
-            Console.WriteLine("99999999");
-            Console.WriteLine("aaaaaaaa");
+            Person luminji = new Person() { FirstName = "Minji", LastName = "lu" };
+            BinarySerializer.SerializeToFile(luminji, @"F:\", "person1.txt");
+            Person p = BinarySerializer.DeserizlizeFromFile<Person>(@"F:\person1.txt");
+            Console.WriteLine(p.FirstName);
+            Console.WriteLine(p.LastName);
+            Console.WriteLine(p.ChineseName);
+            Console.ReadKey();
         }
     }
 }
