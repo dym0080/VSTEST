@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace KZTAPP3
 {
@@ -10,13 +9,27 @@ namespace KZTAPP3
     {
         static void Main(string[] args)
         {
-            Person luminji = new Person() { FirstName = "Minji", LastName = "lu" };
-            BinarySerializer.SerializeToFile(luminji, @"F:\", "person1.txt");
-            Person p = BinarySerializer.DeserizlizeFromFile<Person>(@"F:\person1.txt");
-            Console.WriteLine(p.FirstName);
-            Console.WriteLine(p.LastName);
-            Console.WriteLine(p.ChineseName);
+            ManagerSalary ms = new ManagerSalary();
+            ms.SetSalary(new Employee());
             Console.ReadKey();
+        }
+    }
+    class Employee
+    { }
+    class Manager:Employee
+    { }
+    class Salary
+    {
+        public void SetSalary(Employee e)
+        {
+            Console.WriteLine("职员被设置了薪水");
+        }
+    }
+    class ManagerSalary:Salary
+    {
+        public void SetSalary(Manager m)
+        {
+            Console.WriteLine("经理被设置了薪水");
         }
     }
 }
