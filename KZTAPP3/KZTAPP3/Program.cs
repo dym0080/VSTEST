@@ -23,7 +23,6 @@ namespace KZTAPP3
         public void SetSalary(Employee e)
         {
             Console.WriteLine("职员被设置了薪水");
-            Console.ReadKey();
         }
     }
     class ManagerSalary:Salary
