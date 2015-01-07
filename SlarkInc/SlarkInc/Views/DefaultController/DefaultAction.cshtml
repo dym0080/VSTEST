@@ -1,0 +1,18 @@
+﻿@*@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+
+
+@{
+    SelectListItem item;
+    List<SelectListItem> list = new List<SelectListItem>();
+    for (int i = 1; i < 5; i++)
+    {
+        item = new SelectListItem();
+        item.Text = "Text" + i;
+        item.Value = "Value" + i;
+        item.Selected = (i == 2);
+        list.Add(item);
+    }
+}
+@Html.DropDownList("Id", list)

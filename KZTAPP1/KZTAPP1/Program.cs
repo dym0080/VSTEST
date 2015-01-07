@@ -10,54 +10,36 @@ namespace KZTAPP1
     {
         static void Main(string[] args)
         {
-            Diamod s = new Diamod();
-            s.MethodVirtual();
-            s.Method();
+            American american = new American();
             Console.ReadKey();
         }
     }
-    public class Shape
+    class Person
     {
-        public virtual void MethodVirtual()
+        public Person()
         {
-            Console.WriteLine("base MethodVirtural call");
+            InitSkin();
         }
-        public void Method()
+        protected virtual void InitSkin()
         {
-            Console.WriteLine("base Method call");
-        }
-    }
-    public class Circle : Shape
-    {
-        public override void MethodVirtual()
-        {
-            Console.WriteLine("Circle override MethodVirtual");
-        }
-    }
-    public class Rectangle : Shape
-    {
 
-    }
-    public class Triangle : Shape
-    {
-        public new void MethodVirtual()
-        {
-            Console.WriteLine("Triangle new MethodVirtual");
-        }
-        public new void Method()
-        {
-            Console.WriteLine("Triangle new Method");
         }
     }
-    public class Diamod : Shape
+    class American:Person
     {
-        public void MethodVirtual()
+        Race race;
+        public American()
+            :base()
         {
-            Console.WriteLine("Diamod default MethodVirtual");
+            Race race = new Race() { Name = "White" };
         }
-        public void Method()
+        protected override void InitSkin()
         {
-            Console.WriteLine("Diamod default Method");
+            Console.WriteLine(race.Name);
         }
+    }
+    class Race
+    {
+        public string Name{get;set;}
     }
 }
