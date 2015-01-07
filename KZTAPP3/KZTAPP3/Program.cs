@@ -9,6 +9,27 @@ namespace KZTAPP3
     {
         static void Main(string[] args)
         {
+            AA ss = new AA();
+            Console.WriteLine( ss.dada());
+            Console.ReadKey();
+        }
+    }
+
+    class AA
+    {
+        public int dada()
+        {
+            int i;
+            try
+            {
+                return i = 1;
+            }
+            finally
+            {
+                i = 2;
+                Console.WriteLine("dafaf");
+            }
+            //return i;
             ManagerSalary ms = new ManagerSalary();
             ms.SetSalary(new Employee());
             Console.ReadKey();
