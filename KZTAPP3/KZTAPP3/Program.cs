@@ -10,13 +10,13 @@ namespace KZTAPP3
         static void Main(string[] args)
         {
             Student student = new Student();
-            Console.WriteLine(StudentConverter.GetSexString(student));
+            Console.WriteLine(student.GetSexString());
             Console.ReadKey();
         }
     }
     public static class StudentConverter
     {
-        public static string GetSexString(Student student)
+        public static string GetSexString(this Student student)
         {
             return student.GetSex() == true ? "男" : "女";
         }
