@@ -19,7 +19,7 @@ namespace KZTAPP3
     {
         public int dada()
         {
-            int i;
+            int i=2;
             try
             {
                 return i = 1;
