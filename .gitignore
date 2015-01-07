@@ -1,0 +1,8 @@
+*.mdb  
+*.ldb  
+*.sln   
+
+ 
+bin/  
+Release/  
+obj/   
