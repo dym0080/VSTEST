@@ -14,6 +14,25 @@ namespace KZTAPP3
             Console.ReadKey();
         }
     }
+
+    abstract class Stream
+    { }
+    class FileStream : Stream
+    { }
+    class MemoryStram : Stream
+    { }
+
+    
+    class Context
+    { }
+    class CultureInfo
+    { }
+    class Thread
+    {
+        private Context _context;
+        private CultureInfo _cultureInfo;
+    }
+
     public static class StudentConverter
     {
         public static string GetSexString(this Student student)
@@ -28,5 +47,5 @@ namespace KZTAPP3
             return false;
         }
     }
-    
+
 }
