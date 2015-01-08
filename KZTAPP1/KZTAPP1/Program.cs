@@ -10,36 +10,18 @@ namespace KZTAPP1
     {
         static void Main(string[] args)
         {
-            American american = new American();
             Console.ReadKey();
         }
-    }
-    class Person
-    {
-        public Person()
-        {
-            InitSkin();
-        }
-        protected virtual void InitSkin()
+
+        static void SampleMethod(SampleClass sample)
         {
 
         }
     }
-    class American:Person
-    {
-        Race race;
-        public American()
-            :base()
-        {
-            Race race = new Race() { Name = "White" };
-        }
-        protected override void InitSkin()
-        {
-            Console.WriteLine(race.Name);
-        }
-    }
-    class Race
-    {
-        public string Name{get;set;}
-    }
+    
+    class Sample
+    { }
+    static class SampleClass:Sample
+    { }
+    
 }
