@@ -19,9 +19,4 @@ namespace KZTAPP1
         }
     }
     
-    class Sample
-    { }
-    static class SampleClass:Sample
-    { }
-    
 }
