@@ -20,5 +20,10 @@ namespace KZTAPP1
             string str = "dafjoaeu";
             Console.WriteLine(str);
         }
+
+        public int Add(int a ,int b)
+        {
+            return a + b;
+        }
     }
 }
