@@ -20,9 +20,10 @@ namespace MvcMovie.Controllers
             return "This is my <b>default<b> action...";
         }
 
-        public string Welcome()
+        public string Welcome(string name,int ID=1)
         {
-            return "This is the Welcome action method...";
+            return HttpUtility.HtmlEncode("Hello " + name + ", ID is:" + ID);
+            //return "This is the Welcome action method...";
         }
 	}
 }
