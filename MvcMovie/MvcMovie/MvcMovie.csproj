@@ -173,6 +173,22 @@
     <Compile Include="Migrations\201501140753321_Rating.Designer.cs">
       <DependentUpon>201501140753321_Rating.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201501140817522_dataannotation.cs" />
+    <Compile Include="Migrations\201501140817522_dataannotation.Designer.cs">
+      <DependentUpon>201501140817522_dataannotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501140821025_datanototin.cs" />
+    <Compile Include="Migrations\201501140821025_datanototin.Designer.cs">
+      <DependentUpon>201501140821025_datanototin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501140823550_dafa.cs" />
+    <Compile Include="Migrations\201501140823550_dafa.Designer.cs">
+      <DependentUpon>201501140823550_dafa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501140827028_dafa1.cs" />
+    <Compile Include="Migrations\201501140827028_dafa1.Designer.cs">
+      <DependentUpon>201501140827028_dafa1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -181,6 +197,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Movies.mdf" />
+    <Content Include="App_Data\Movies_log.ldf">
+      <DependentUpon>Movies.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -588,9 +608,7 @@
     <Content Include="Views\Movies\Edit.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -604,6 +622,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201501140753321_Rating.resx">
       <DependentUpon>201501140753321_Rating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501140817522_dataannotation.resx">
+      <DependentUpon>201501140817522_dataannotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501140821025_datanototin.resx">
+      <DependentUpon>201501140821025_datanototin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501140823550_dafa.resx">
+      <DependentUpon>201501140823550_dafa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501140827028_dafa1.resx">
+      <DependentUpon>201501140827028_dafa1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
