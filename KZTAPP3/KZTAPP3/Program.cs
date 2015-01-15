@@ -9,48 +9,43 @@ namespace KZTAPP3
     {
         static void Main(string[] args)
         {
-            AA ss = new AA();
-            Console.WriteLine( ss.dada());
+            Student student = new Student();
+            Console.WriteLine(student.GetSexString());
             Console.ReadKey();
         }
     }
 
-    class AA
-    {
-        public int dada()
-        {
-            int i=3;
-            try
-            {
-                return i = 1;
-            }
-            finally
-            {
-                i = 2;
-                Console.WriteLine("dafaf");
-            }
-            //return i;
-            ManagerSalary ms = new ManagerSalary();
-            ms.SetSalary(new Employee());
-            Console.ReadKey();
-        }
-    }
-    class Employee
+    abstract class Stream
     { }
-    class Manager:Employee
+    class FileStream : Stream
     { }
-    class Salary
+    class MemoryStram : Stream
+    { }
+
+    
+    class Context
+    { }
+    class CultureInfo
+    { }
+    class Thread
     {
-        public void SetSalary(Employee e)
+        private Context _context;
+        private CultureInfo _cultureInfo;
+    }
+
+    public static class StudentConverter
+    {
+        public static string GetSexString(this Student student)
         {
-            Console.WriteLine("职员被设置了薪水");
+            return student.GetSex() == true ? "男" : "女";
         }
     }
-    class ManagerSalary:Salary
+    public class Student
     {
-        public void SetSalary(Manager m)
+        public bool GetSex()
         {
-            Console.WriteLine("经理被设置了薪水");
+            return false;
         }
     }
+
 }
