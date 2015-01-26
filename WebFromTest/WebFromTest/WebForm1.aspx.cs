@@ -11,7 +11,9 @@ namespace WebFromTest
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Literal1.Text = "<a href=\"#\" onclick=\"JumpToUrl(2,'<%=ResolveUrl(\"dafd/DAD.aspx\")%>')\"><img alt=\"\" src=\"images/index-alarm.png\"/></a>";
+            
+            DateTime serviceEnd = Convert.ToDateTime("2012-11-20 13:00:59").AddMonths(Convert.ToInt32(999));
+            string sa = string.Empty;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
