@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 
 namespace KZTAPP3
@@ -9,43 +12,63 @@ namespace KZTAPP3
     {
         static void Main(string[] args)
         {
-            Student student = new Student();
-            Console.WriteLine(student.GetSexString());
+            Employee mike = new Employee()
+            {
+                IDCode = "NB123",
+                Age = 30,
+                Department = new Department() { Name = "Dep1" }
+            };
+            Employee rose = mike.Clone() as Employee;
+            Console.WriteLine(mike.IDCode);
+            Console.WriteLine(mike.Age);
+            Console.WriteLine(mike.Department);
+            Console.WriteLine("开始改变rose值：");
+            rose.IDCode = "NB456";
+            rose.Age = 60;
+            rose.Department.Name = "Dep2";
+            Console.WriteLine("mike ：");
+            Console.WriteLine(mike.IDCode);
+            Console.WriteLine(mike.Age);
+            Console.WriteLine(mike.Department);
+            Console.WriteLine("rose ：");
+            Console.WriteLine(rose.IDCode);
+            Console.WriteLine(rose.Age);
+            Console.WriteLine(rose.Department);
             Console.ReadKey();
+
+
         }
     }
 
-    abstract class Stream
-    { }
-    class FileStream : Stream
-    { }
-    class MemoryStram : Stream
-    { }
-
-    
-    class Context
-    { }
-    class CultureInfo
-    { }
-    class Thread
+    [Serializable]
+    class Employee : ICloneable
     {
-        private Context _context;
-        private CultureInfo _cultureInfo;
-    }
+        public string IDCode { get; set; }
+        public int Age { get; set; }
+        public Department Department { get; set; }
 
-    public static class StudentConverter
-    {
-        public static string GetSexString(this Student student)
+        public object Clone()
         {
-            return student.GetSex() == true ? "男" : "女";
+            using (Stream sr = new MemoryStream())
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(sr, this);
+                sr.Seek(0, SeekOrigin.Begin);
+                return formatter.Deserialize(sr) as Employee;
+            }
         }
+
     }
-    public class Student
+    [Serializable]
+    class Department
     {
-        public bool GetSex()
+        public string Name { get; set; }
+        public override string ToString()
         {
-            return false;
+            return this.Name;
         }
     }
+
+
 
 }
