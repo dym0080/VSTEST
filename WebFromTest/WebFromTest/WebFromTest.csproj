@@ -67,6 +67,7 @@
   <ItemGroup>
     <Content Include="dafd\DAD.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="images\flag.png" />
     <Content Include="images\index-alarm.png" />
     <Content Include="images\index-alarm2.png" />
