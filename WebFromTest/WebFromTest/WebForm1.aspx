@@ -130,7 +130,7 @@
                     <li><a href="#">111111</a></li>
                 </ul>
             </div>
-            <div class="news" style="display: none;">
+            <div class="news" >
                 <ul>
                     <li><a href="#">222222</a></li>
                     <li><a href="#">222222</a></li>

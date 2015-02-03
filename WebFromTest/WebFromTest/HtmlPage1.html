@@ -1,17 +1,20 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
+    <script src="_Javascript/jquery.js"></script>
     <script type="text/javascript">
 
-        String.prototype.reverse = function () {
-            return this.split('').reverse().join('');
-        }
-        console.log('123'.reverse() === '321');
+        $(document).ready(function () {
+            var bb= $("div").siblings(".selected")
+            console.log(bb);
+        });
     </script>
 </head>
 <body>
-
+    <div><span>Hello</span></div>
+    <p class="selected">Hello Again</p>
+    <p>And Again</p>
 </body>
 </html>
