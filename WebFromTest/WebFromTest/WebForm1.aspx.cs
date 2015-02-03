@@ -12,8 +12,6 @@ namespace WebFromTest
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            DateTime serviceEnd = Convert.ToDateTime("2012-11-20 13:00:59").AddMonths(Convert.ToInt32(999));
-            string sa = string.Empty;
         }
 
         protected void Button1_Click(object sender, EventArgs e)

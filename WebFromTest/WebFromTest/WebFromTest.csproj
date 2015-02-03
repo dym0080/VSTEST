@@ -74,10 +74,12 @@
     <Content Include="images\index-position.png" />
     <Content Include="images\index-time.png" />
     <Content Include="images\index_nav_08.png" />
+    <Content Include="test2.html" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="WebForm3.aspx" />
+    <Content Include="_Javascript\jquery.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dafd\DAD.aspx.cs">

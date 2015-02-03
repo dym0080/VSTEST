@@ -1,10 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebFromTest.WebForm1" %>
-
-<!DOCTYPE html>
-
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <script src="_Javascript/jquery.js"></script>
     <style type="text/css">
@@ -100,7 +97,7 @@
         $(function () {
             var $title = $(".title ul li");
             var $content = $("#rdxw .news");
-            $(".title").mousemove(function () {
+            $title.mousemove(function () {
                 var index = $title.index($(this));
                 $(this).addClass("t_title").siblings().removeClass("t_title");
                 $content.hide();
@@ -109,39 +106,35 @@
             });
         });
     </script>
-
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div id="rdxw">
-            <div class="title">
-                <ul>
-                    <li id="rdxw_title" class="t_title"><a href="#">11111</a></li>
-                    <li id="hyzx_title"><a href="#">22222</a></li>
-                </ul>
-            </div>
-            <div class="news">
-                <ul>
-                    <li><a href="#">111111</a></li>
-                    <li><a href="#">111111</a></li>
-                    <li><a href="#">111111</a></li>
-                    <li><a href="#">111111</a></li>
-                    <li><a href="#">111111</a></li>
-                    <li><a href="#">111111</a></li>
-                </ul>
-            </div>
-            <div class="news" style="display: none;">
-                <ul>
-                    <li><a href="#">222222</a></li>
-                    <li><a href="#">222222</a></li>
-                    <li><a href="#">222222</a></li>
-                    <li><a href="#">222222</a></li>
-                    <li><a href="#">222222</a></li>
-                    <li><a href="#">222222</a></li>
-                </ul>
-            </div>
+    <div id="rdxw">
+        <div class="title">
+            <ul>
+                <li id="rdxw_title" class="t_title"><a href="#">11111</a></li>
+                <li id="hyzx_title" ><a href="#">22222</a></li>
+            </ul>
         </div>
-    </form>
+        <div class="news">
+            <ul>
+                <li><a href="#">111111</a></li>
+                <li><a href="#">111111</a></li>
+                <li><a href="#">111111</a></li>
+                <li><a href="#">111111</a></li>
+                <li><a href="#">111111</a></li>
+                <li><a href="#">111111</a></li>
+            </ul>
+        </div>
+        <div class="news" style="display: none;">
+            <ul>
+                <li><a href="#">222222</a></li>
+                <li><a href="#">222222</a></li>
+                <li><a href="#">222222</a></li>
+                <li><a href="#">222222</a></li>
+                <li><a href="#">222222</a></li>
+                <li><a href="#">222222</a></li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
-
