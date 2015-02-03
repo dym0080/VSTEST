@@ -12,46 +12,27 @@ namespace KZTAPP1
 {
     class Program
     {
-        static List<Student> list1 = new List<Student>()
-        {
-            new Student(){Name="Mike" ,Age=1},
-            new Student(){Name="Rose" ,Age=2}
-        };
+
         static void Main(string[] args)
         {
-            StudentTeamA teamA2 = new StudentTeamA();
-            teamA2.students.Add(new Student() { Name = "Steve", Age = 3 });
-            teamA2.students.AddRange(list1);
-            Console.WriteLine(teamA2.students.Count);
+            List<Action> lists = new List<Action>();
+            for (int i = 0; i < 5; i++)
+            {
+                Action t=()=>
+                    {
+                        Console.WriteLine(i.ToString());
+                    };
+                lists.Add(t);
+            }
+            foreach (Action t in lists)
+            {
+                t();
+            }
 
-            StudentTeamA teamA3 = list1;
-            Console.WriteLine(teamA3.students.Count);
             Console.ReadKey();
         }
+
     }
-    class Student
-    {
-        public string Name { get; set; }
-        public int Age { get; set; }
-    }
-    class StudentTeamA
-    {
-        public List<Student> students { get; private set; }
-        public StudentTeamA()
-        {
-            students = new List<Student>();
-        }
-        public StudentTeamA(IEnumerable<Student> studentlist)
-            : this()
-        {
-            students.AddRange(studentlist);
-        }
-    }
-
-
-
-
-
-
 
 }
+
