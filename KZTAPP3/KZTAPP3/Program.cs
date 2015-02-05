@@ -12,30 +12,33 @@ namespace KZTAPP3
     {
         static void Main(string[] args)
         {
-            List<Action> lists = new List<Action>();
-            TempClass tempClass = new TempClass();
-            for (tempClass.i = 0; tempClass.i < 5; tempClass.i++)
-            {
-                Action t = tempClass.TempFun;
-                lists.Add(t);
-            }
-            foreach (Action t in lists)
-            {
-                t();
-            }
-
+            ISalary<Programmer> s = new BaseSalaryCounter<Programmer>();
+            PrintSalary(s);
             Console.ReadKey();
             
         }
-    }
-
-    class TempClass
-    {
-        public int i;
-        public void TempFun()
+        private static void PrintSalary(ISalary<Programmer> s)
         {
-            Console.WriteLine(i.ToString());
+            s.Pay();
         }
     }
-
+    interface ISalary<T>
+    {
+        void Pay();
+    }
+    class BaseSalaryCounter<T>:ISalary<T>
+    {
+        public void Pay()
+        {
+            Console.WriteLine("Pay base Salary.");
+        }
+    }
+    class Empoyee
+    {
+        public string Name { get; set; }
+    }
+    class Programmer:Empoyee
+    { }
+    class Manager:Empoyee
+    { }
 }
