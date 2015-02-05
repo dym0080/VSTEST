@@ -1,20 +1,31 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
-    <script src="_Javascript/jquery.js"></script>
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-            var bb= $("div").siblings(".selected")
-            console.log(bb);
+    <meta charset="utf-8">
+    <title>jQuery UI Draggable - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+        #draggable {
+            width: 150px;
+            height: 150px;
+            padding: 0.5em;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#draggable").draggable();
         });
     </script>
 </head>
 <body>
-    <div><span>Hello</span></div>
-    <p class="selected">Hello Again</p>
-    <p>And Again</p>
+
+    <div id="draggable" class="ui-widget-content">
+        <p>Drag me around</p>
+    </div>
+
+
 </body>
 </html>
