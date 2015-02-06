@@ -13,16 +13,18 @@ namespace KZTAPP3
         static void Main(string[] args)
         {
             ISalary<Programmer> s = new BaseSalaryCounter<Programmer>();
+            ISalary<Manager> t = new BaseSalaryCounter<Manager>();
             PrintSalary(s);
+            PrintSalary(t);
             Console.ReadKey();
             
         }
-        private static void PrintSalary(ISalary<Programmer> s)
+        private static void PrintSalary(ISalary<Empoyee> s)
         {
             s.Pay();
         }
     }
-    interface ISalary<T>
+    interface ISalary<out T>
     {
         void Pay();
     }
