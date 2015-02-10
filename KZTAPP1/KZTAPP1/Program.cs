@@ -14,53 +14,70 @@ namespace KZTAPP1
 
     class Program
     {
-        public static DateTime t;
+        static internal Thread[] threads = new Thread[10];
         static void Main(string[] args)
         {
 
-            Alpha oAlpha = new Alpha();
-            //file://这里创建一个线程，使之执行Alpha类的Beta()方法 
-            Thread oThread = new Thread(new ThreadStart(oAlpha.Beta));
-
-            t = System.DateTime.Now;
-
-            oThread.Start();
-
-            Console.WriteLine("Sleep begin ");
-            Thread.Sleep(25);
-            Console.WriteLine("Sleep time is :" + (System.DateTime.Now - t).TotalMilliseconds);
-
-            oThread.Abort();
-            oThread.Join();
-
-            Console.WriteLine();
-            Console.WriteLine("Alpha.Beta has finished");
-            try
+            Account acc = new Account(0);
+            for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine("Try to restart the Alpha.Beta thread");
-                oThread.Start();
+                Thread t = new Thread(new ThreadStart(acc.DoTransactions));
+                threads[i] = t;
             }
-            catch (ThreadStateException)
-            {
-                Console.Write("ThreadStateException trying to restart Alpha.Beta. ");
-                Console.WriteLine("Expected since aborted threads cannot be restarted.");
-                Console.ReadLine();
-            }
+            for (int i = 0; i < 10; i++)
+                threads[i].Name = i.ToString();
+            for (int i = 0; i < 10; i++)
+                threads[i].Start();
+
+            Console.ReadKey();
         }
     }
-
-
-    public class Alpha
+    internal class Account
     {
-        public void Beta()
+        int balance;
+        Random r = new Random();
+
+        internal Account(int initial)
         {
-            while (true)
-            {
-                Console.WriteLine("Alpha.Beta runtime" + (System.DateTime.Now - Program.t).TotalMilliseconds);
-            }
+            balance = initial;
         }
 
-    }
+        internal int Withdraw(int amount)
+        {
+            if (balance < 0)
+            {
+                //如果balance小于0则抛出异常
+                throw new Exception("Negative Balance");
+            }
+            //下面的代码保证在当前线程修改balance的值完成之前
+            //不会有其他线程也执行这段代码来修改balance的值
+            //因此，balance的值是不可能小于0 的
+            lock (this)
+            {
+                Console.WriteLine("Current Thread:" + Thread.CurrentThread.Name);
+                //如果没有lock关键字的保护，那么可能在执行完if的条件判断之后
+                //另外一个线程却执行了balance=balance-amount修改了balance的值
+                //而这个修改对这个线程是不可见的，所以可能导致这时if的条件已经不成立了
+                //但是，这个线程却继续执行balance=balance-amount，所以导致balance可能小于0
+                if (balance >= amount)
+                {
+                    Thread.Sleep(5);
+                    balance = balance - amount;
+                    return amount;
+                }
+                else
+                {
+                    return 0; // transaction rejected
+                }
+            }
+        }
+        internal void DoTransactions()
+        {
+            for (int i = 0; i < 100; i++)
+                Withdraw(r.Next(-50, 100));
+        }
+    } 
+
 }
 
 
