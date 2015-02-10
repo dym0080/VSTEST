@@ -10,52 +10,57 @@ using System.Threading;
 
 namespace KZTAPP1
 {
+
+
     class Program
     {
-
+        public static DateTime t;
         static void Main(string[] args)
         {
-            FileUploader f1 = new FileUploader();
-            f1.FileUploaded += Progress;
-            f1.FileUploaded += AnotherProgess;
-            f1.Upload();
 
-            Console.ReadKey();
-        }
+            Alpha oAlpha = new Alpha();
+            //file://这里创建一个线程，使之执行Alpha类的Beta()方法 
+            Thread oThread = new Thread(new ThreadStart(oAlpha.Beta));
 
-        static void Progress(object sender,FileUploaderEventArgs e)
-        {
-            Console.WriteLine(e.FileProgress);
-        }
-        static void AnotherProgess(object sender,FileUploaderEventArgs e)
-        {
-            Console.WriteLine("另外一个Progress: "+ e.FileProgress);
-        }
-    }
+            t = System.DateTime.Now;
 
-    class FileUploader
-    {
-        //public delegate void FileUploaderHandler(int progress);
-        //public event FileUploaderHandler FileUploaded;
-        public event EventHandler<FileUploaderEventArgs> FileUploaded;
-        public void Upload()
-        {
-            //int fileProgess = 10;
-            FileUploaderEventArgs e = new FileUploaderEventArgs() { FileProgress = 10 };
-            while(e.FileProgress>0)
+            oThread.Start();
+
+            Console.WriteLine("Sleep begin ");
+            Thread.Sleep(25);
+            Console.WriteLine("Sleep time is :" + (System.DateTime.Now - t).TotalMilliseconds);
+
+            oThread.Abort();
+            oThread.Join();
+
+            Console.WriteLine();
+            Console.WriteLine("Alpha.Beta has finished");
+            try
             {
-                e.FileProgress--;
-                if(FileUploaded!=null)
-                {
-                    FileUploaded(this,e);
-                }
+                Console.WriteLine("Try to restart the Alpha.Beta thread");
+                oThread.Start();
+            }
+            catch (ThreadStateException)
+            {
+                Console.Write("ThreadStateException trying to restart Alpha.Beta. ");
+                Console.WriteLine("Expected since aborted threads cannot be restarted.");
+                Console.ReadLine();
             }
         }
     }
-    class FileUploaderEventArgs:EventArgs
-    {
-        public int FileProgress { get; set; }
-    }
 
+
+    public class Alpha
+    {
+        public void Beta()
+        {
+            while (true)
+            {
+                Console.WriteLine("Alpha.Beta runtime" + (System.DateTime.Now - Program.t).TotalMilliseconds);
+            }
+        }
+
+    }
 }
+
 
