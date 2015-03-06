@@ -30,8 +30,6 @@ namespace KZTAPP1
                 Console.Write("?");
             }
         }
-       
-
     }
 
 }
