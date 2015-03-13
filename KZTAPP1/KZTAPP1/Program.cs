@@ -16,19 +16,24 @@ namespace KZTAPP1
     {
         static void Main(string[] args)
         {
-
-            new Thread(Go).Start();
-            Go();
+            TestMethod();
             Console.ReadKey();
 
         }
 
-        private static void Go()
+        private static int TestMethod()
         {
-            for (int i = 0; i < 5; i++)
+            int i;
+            try
             {
-                Console.Write("?");
+                return i = 1;
             }
+            finally
+            {
+                i = 2;
+                Console.WriteLine("222222222222");
+            }
+            //return i;
         }
     }
 
