@@ -16,26 +16,60 @@ namespace KZTAPP1
     {
         static void Main(string[] args)
         {
-            TestMethod();
+
+            Shape s = new Triangle();
+            s.MethodVirtual();
+            s.Method();
+
             Console.ReadKey();
 
         }
-
-        private static int TestMethod()
+    }
+    public class Shape
+    {
+        public virtual void MethodVirtual()
         {
-            int i;
-            try
-            {
-                return i = 1;
-            }
-            finally
-            {
-                i = 2;
-                Console.WriteLine("222222222222");
-            }
-            //return i;
+            Console.WriteLine("base MethodVirtural call");
+        }
+        public void Method()
+        {
+            Console.WriteLine("base Method call");
         }
     }
+    public class Circle : Shape
+    {
+        public override void MethodVirtual()
+        {
+            Console.WriteLine("Circle override MethodVirtual");
+        }
+    }
+    public class Rectangle : Shape
+    {
+
+    }
+    public class Triangle : Shape
+    {
+        public new void MethodVirtual()
+        {
+            Console.WriteLine("Triangle new MethodVirtual");
+        }
+        public new void Method()
+        {
+            Console.WriteLine("Triangle new Method");
+        }
+    }
+    public class Diamod : Shape
+    {
+        public void MethodVirtual()
+        {
+            Console.WriteLine("Diamod default MethodVirtual");
+        }
+        public void Method()
+        {
+            Console.WriteLine("Diamod default Method");
+        }
+    }
+
 
 }
 
