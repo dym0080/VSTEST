@@ -10,67 +10,43 @@ using System.Threading;
 
 namespace KZTAPP1
 {
-
-
     class Program
     {
         static void Main(string[] args)
         {
 
-            Shape s = new Triangle();
-            s.MethodVirtual();
-            s.Method();
-
+            American american = new American();
             Console.ReadKey();
+        }
+    }
+    class Person
+    {
+        public Person()
+        {
+            InitSkin();
+        }
+        protected virtual void InitSkin()
+        {
 
         }
     }
-    public class Shape
+    class American : Person
     {
-        public virtual void MethodVirtual()
+        Race race;
+        public American()
+            : base()
         {
-            Console.WriteLine("base MethodVirtural call");
+            Race race = new Race() { Name = "White" };
         }
-        public void Method()
+        protected override void InitSkin()
         {
-            Console.WriteLine("base Method call");
+            Console.WriteLine(race.Name);
         }
     }
-    public class Circle : Shape
+    class Race
     {
-        public override void MethodVirtual()
-        {
-            Console.WriteLine("Circle override MethodVirtual");
-        }
+        public string Name { get; set; }
     }
-    public class Rectangle : Shape
-    {
-
-    }
-    public class Triangle : Shape
-    {
-        public new void MethodVirtual()
-        {
-            Console.WriteLine("Triangle new MethodVirtual");
-        }
-        public new void Method()
-        {
-            Console.WriteLine("Triangle new Method");
-        }
-    }
-    public class Diamod : Shape
-    {
-        public void MethodVirtual()
-        {
-            Console.WriteLine("Diamod default MethodVirtual");
-        }
-        public void Method()
-        {
-            Console.WriteLine("Diamod default Method");
-        }
-    }
-
-
 }
 
 
