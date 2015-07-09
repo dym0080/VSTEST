@@ -68,6 +68,8 @@
     <Content Include="dafd\DAD.aspx" />
     <Content Include="Global.asax" />
     <Content Include="HtmlPage1.html" />
+    <Content Include="HtmlPage2.html" />
+    <Content Include="HtmlPage3.html" />
     <Content Include="images\flag.png" />
     <Content Include="images\index-alarm.png" />
     <Content Include="images\index-alarm2.png" />
@@ -75,11 +77,45 @@
     <Content Include="images\index-time.png" />
     <Content Include="images\index_nav_08.png" />
     <Content Include="jqTabs.aspx" />
-    <Content Include="test2.html" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="WebForm3.aspx" />
+    <Content Include="_Javascript\Highcharts\adapters\standalone-framework.js" />
+    <Content Include="_Javascript\Highcharts\adapters\standalone-framework.src.js" />
+    <Content Include="_Javascript\Highcharts\highcharts-3d.js" />
+    <Content Include="_Javascript\Highcharts\highcharts-3d.src.js" />
+    <Content Include="_Javascript\Highcharts\highcharts-all.js" />
+    <Content Include="_Javascript\Highcharts\highcharts-more.js" />
+    <Content Include="_Javascript\Highcharts\highcharts-more.src.js" />
+    <Content Include="_Javascript\Highcharts\highcharts.js" />
+    <Content Include="_Javascript\Highcharts\highcharts.src.js" />
+    <Content Include="_Javascript\Highcharts\modules\canvas-tools.js" />
+    <Content Include="_Javascript\Highcharts\modules\canvas-tools.src.js" />
+    <Content Include="_Javascript\Highcharts\modules\data.js" />
+    <Content Include="_Javascript\Highcharts\modules\data.src.js" />
+    <Content Include="_Javascript\Highcharts\modules\drilldown.js" />
+    <Content Include="_Javascript\Highcharts\modules\drilldown.src.js" />
+    <Content Include="_Javascript\Highcharts\modules\exporting.js" />
+    <Content Include="_Javascript\Highcharts\modules\exporting.src.js" />
+    <Content Include="_Javascript\Highcharts\modules\funnel.js" />
+    <Content Include="_Javascript\Highcharts\modules\funnel.src.js" />
+    <Content Include="_Javascript\Highcharts\modules\heatmap.js" />
+    <Content Include="_Javascript\Highcharts\modules\heatmap.src.js" />
+    <Content Include="_Javascript\Highcharts\modules\no-data-to-display.js" />
+    <Content Include="_Javascript\Highcharts\modules\no-data-to-display.src.js" />
+    <Content Include="_Javascript\Highcharts\modules\solid-gauge.js" />
+    <Content Include="_Javascript\Highcharts\modules\solid-gauge.src.js" />
+    <Content Include="_Javascript\Highcharts\themes\dark-blue.js" />
+    <Content Include="_Javascript\Highcharts\themes\dark-green.js" />
+    <Content Include="_Javascript\Highcharts\themes\dark-unica.js" />
+    <Content Include="_Javascript\Highcharts\themes\gray.js" />
+    <Content Include="_Javascript\Highcharts\themes\grid-light.js" />
+    <Content Include="_Javascript\Highcharts\themes\grid.js" />
+    <Content Include="_Javascript\Highcharts\themes\sand-signika.js" />
+    <Content Include="_Javascript\Highcharts\themes\skies.js" />
+    <Content Include="_Javascript\jquery-1.8.2.js" />
+    <Content Include="_Javascript\jquery-1.8.2.min.js" />
     <Content Include="_Javascript\jquery.js" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +162,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

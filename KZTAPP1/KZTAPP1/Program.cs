@@ -11,12 +11,11 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace KZTAPP1
 {
-
-
     class Program
     {
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             Person mike = new Person() { Age = 21, Name = "Mike" };
             mike.NameChanged += new EventHandler(Mike_ddNameChanged);
             SerializeNow(mike);
@@ -70,6 +69,41 @@ namespace KZTAPP1
     }
 
 
+=======
+
+            American american = new American();
+            Console.ReadKey();
+        }
+    }
+    class Person
+    {
+        public Person()
+        {
+            InitSkin();
+        }
+        protected virtual void InitSkin()
+        {
+
+        }
+    }
+    class American : Person
+    {
+        Race race;
+        public American()
+            : base()
+        {
+            Race race = new Race() { Name = "White" };
+        }
+        protected override void InitSkin()
+        {
+            Console.WriteLine(race.Name);
+        }
+    }
+    class Race
+    {
+        public string Name { get; set; }
+    }
+>>>>>>> 586dc694901296fe67eac3404a240e8bb8108c4d
 }
 
 

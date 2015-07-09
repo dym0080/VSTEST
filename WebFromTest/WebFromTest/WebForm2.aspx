@@ -3,93 +3,81 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
-    <script type="text/javascript" src="http://mapabc.zlzk.com:8081/webapi/auth.json?t=javascriptmap&amp;v=3.1.1&amp;key=82bd4c76ab57561aad61d3baf82b616e4aacf461dbc0f004854457f59fb16ab863a3a1722cef553f"></script>
-
+<head>
+    <meta charset="UTF-8">
+    <title>Basic CRUD Application - jQuery EasyUI CRUD Demo</title>
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/color.css">
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/demo/demo.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
+    <script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="mapObj" style="width: 1300px; height: 900px"></div>
-        <script type="text/javascript">
-            var mapObj, toolbar, overview, scale;
-            var opt = {
-                level: 13,//初始地图视野级别
-                center: new MMap.LngLat(116.397428, 39.90923),//设置地图中心点
-                doubleClickZoom: true,//双击放大地图
-                dragEnable:true,
-                scrollwheel: true//鼠标滚轮缩放地图
-            }
-            mapObj = new MMap.Map("mapObj", opt);
-            mapObj.plugin(["MMap.ToolBar", "MMap.OverView", "MMap.Scale"], function () {
-                toolbar = new MMap.ToolBar();
-                toolbar.autoPosition = false; //加载工具条
-                mapObj.addControl(toolbar);
-                overview = new MMap.OverView(); //加载鹰眼
-                mapObj.addControl(overview);
-                scale = new MMap.Scale(); //加载比例尺
-                mapObj.addControl(scale);
-            });
+        <div>
+            <ul class="smallicon menuItem">
+                <li>
+                    <div><a ref="4" href="#" rel="Dictionary/Index?navid=4"><span class="nav">字典项管理</span></a></div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul class="smallicon menuItem">
+                <li>
+                    <div><a ref="2" href="#" rel="User/Index?navid=2"><span class="nav">用户管理</span></a></div>
+                </li>
+                <li>
+                    <div><a ref="3" href="#" rel="Menu/Index?navid=3"><span class="nav">菜单管理</span></a></div>
+                </li>
+                <li>
+                    <div><a ref="4" href="#" rel="Dictionary/Index?navid=4"><span class="nav">字典项管理</span></a></div>
+                </li>
+                <li>
+                    <div><a ref="33" href="#" rel="DefaultRole/Index?navid=33"><span class="nav">默认权限集</span></a></div>
+                </li>
+                <li>
+                    <div><a ref="34" href="#" rel="SimManager/Index?navid=34"><span class="nav">SIM卡管理</span></a></div>
+                </li>
+                <li>
+                    <div><a ref="35" href="#" rel="TerminalManager/Index?navid=35"><span class="nav">GPS终端管理</span></a></div>
+                </li>
+                <li>
+                    <div><a ref="36" href="#" rel="SimCost/Index?navid=36"><span class="nav">SIM卡费用统计</span></a></div>
+                </li>
+                <li>
+                    <div><a ref="37" href="#" rel="UserLog/Index?navid=37"><span class="nav">用户日志</span></a></div>
+                </li>
+                <li>
+                    <div><a ref="38" href="#" rel="VehGroup/Index?navid=38"><span class="nav">机群管理</span></a></div>
+                </li>
+                <li>
+                    <div><a ref="39" href="#" rel="Product/Index?navid=39"><span class="nav">产品目录</span></a></div>
+                </li>
+                <li>
+                    <div><a ref="40" href="#" rel="FeedBack/IndexForHead?navid=40"><span class="nav">在线答疑（总部或经销商）</span></a></div>
+                </li>
+                <li>
+                    <div><a ref="41" href="#" rel="FeedBack/Index?navid=41"><span class="nav">在线答疑(用户)</span></a></div>
+                </li>
+                <li>
+                    <div><a ref="42" href="#" rel="Company/Index?navid=42"><span class="nav">机构管理</span></a></div>
+                </li>
+                <li>
+                    <div><a ref="43" href="#" rel="ServiceResource/Index?navid=43"><span class="nav">资源管理</span></a></div>
+                </li>
+                <li>
+                    <div><a ref="45" href="#" rel="VehTypeModel/Index?navid=45"><span class="nav">产品组机型管理</span></a></div>
+                </li>
+                <li>
+                    <div><a ref="46" href="#" rel="TxLog/Index?navid=46"><span class="nav">通讯日志</span></a></div>
+                </li>
+                <li>
+                    <div><a ref="64" href="#" rel="TonXl/Index?navid=64"><span class="nav">吨位系列配置</span></a></div>
+                </li>
+            </ul>
+        </div>
 
-            //var arr = new Array();//经纬度坐标数组 
-            //arr.push(new MMap.LngLat("116.40332221984863", "39.92025505675715"));
-            //arr.push(new MMap.LngLat("116.41070365905762", "39.89755531478615"));
-            //arr.push(new MMap.LngLat("116.40229225158691", "39.892353073034826"));
-            //arr.push(new MMap.LngLat("116.38984680175781", "39.89136526100842"));
-
-            //var polygon = new MMap.Polygon({ id: "polygon01", path: arr, strokeColor: "#0000ff", strokeOpacity: 0.2, strokeWeight: 3, fillColor: "#f5deb3", fillOpacity: 0.35 });
-
-            //mapObj.addOverlays(polygon);
-
-            //var infoWindow = new MMap.InfoWindow({ offset: new MMap.Pixel(-125, -25) });
-            //infoWindow.setContent("圆");
-
-            
-
-            //contextMenu = new MMap.ContextMenu();
-            //contextMenu.isCustom = false;
-            //contextMenu.position = new MMap.LngLat("116.83322219", "39.192550567");
-
-            //contextMenu.addItem("MapABC", function () {
-            //    window.location.href = "http://www.mapabc.com";
-            //}, 0);
-            //contextMenu.addItem("百度", function () {
-            //    window.location.href = "http://www.baidu.com";
-            //}, 0);
-            //mapObj.bind(mapObj, "rightclick", function (e) {
-            //    contextMenu.open(mapObj, e.lnglat);
-            //});
-            //mapObj.bind(mapObj, "click", function (e) {
-            //    infoWindow.open(mapObj, new MMap.LngLat(116.40332221984863, 39.90025505675715));
-            //});
-
-            //// mapObj.bind(polygon, "click", function (e) { infoWindow.open(mapObj, e.lnglat); })
-
-            //var rest = new MMap.RestAPI();
-
-            //rest.request("http://www.mapabc.com", console.log);
-            var partition = new MMap.Partition();
-
-
-
-
-            partition.byCity("021", function (data) {
-                console.log(data);
-            });
-
-
-
-
-
-
-
-
-
-
-
-
-        </script>
     </form>
 </body>
 </html>
