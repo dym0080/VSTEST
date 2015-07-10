@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dafd\DAD.aspx" />
+    <Content Include="demo.html" />
     <Content Include="Global.asax" />
     <Content Include="HtmlPage1.html" />
     <Content Include="HtmlPage2.html" />
@@ -117,6 +118,8 @@
     <Content Include="_Javascript\jquery-1.8.2.js" />
     <Content Include="_Javascript\jquery-1.8.2.min.js" />
     <Content Include="_Javascript\jquery.js" />
+    <Content Include="_Javascript\winpop.css" />
+    <Content Include="_Javascript\winpop.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dafd\DAD.aspx.cs">

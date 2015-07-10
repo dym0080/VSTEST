@@ -6,34 +6,26 @@
     <script src="_Javascript/jquery-1.8.2.js"></script>
     <script type="text/javascript">
         $(function () {
-            var $li = $("li");
-
-            $li.data("name", "Baidu");
-            $li.data("desc", "dafafafa");
-            $li.data("url", "http://www.baidu.com/");
-
-            var obj = $("#n6").data();
-            //for (var i in obj) {
-            //    document.writeln(i + "=" + obj[i] + "</br>");
+            //alert("内置Alert控件");
+            //if (confirm("关闭内置Confirm控件？")) {
+            //    alert("True");
+            //} else {
+            //    alert("False");
             //}
-            $.each(obj, function (key, value) {
-                document.writeln(key + "=" + value + "</br>");
-            });
 
+            var obj = new Winpop();
 
+            window.alert = function (str) {
+                obj.alert.call(obj, str);
+            }
 
+            window.confirm = function (str, cb) {
+                obj.confirm.call(obj, str, cb);
+            }
         });
     </script>
 </head>
 <body>
-    <div id="n1">
-        <div id="n2">
-            <ul id="n3">
-                <li id="n4">item1</li>
-                <li id="n5">item2</li>
-                <li id="n6">item3</li>
-            </ul>
-        </div>
-    </div>
+
 </body>
 </html>
