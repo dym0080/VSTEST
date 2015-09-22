@@ -15,12 +15,7 @@ namespace KZTAPP1
     {
         static void Main(string[] args)
         {
-            IEnumerable<char> query = "How are you, friend.";
-
-            foreach (char vowel in "aeiou")
-                query = query.Where(c => c != vowel);
-
-            foreach (char c in query) Console.Write(c); //How are yo, friend.
+            
 
             Console.ReadKey();
         }

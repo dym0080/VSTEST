@@ -6,37 +6,92 @@
     <script src="_Javascript/jquery-1.8.2.js"></script>
     <script type="text/javascript">
         $(function () {
-            test("0");
+            function outerFn() {
+                var outerVar = 0;
+                document.write("Outer function<br/>");
+                function innerFn1() {
+                    outerVar++;
+                    document.write("Inner function 1\t");
+                    document.write("outerVar = " + outerVar + "<br/>");
+                }
 
+                function innerFn2() {
+                    outerVar += 2;
+                    document.write("Inner function 2\t");
+                    document.write("outerVar = " + outerVar + "<br/>");
+                }
+                return { "fn1": innerFn1, "fn2": innerFn2 };
+            }
+            var fnRef = outerFn();
+            fnRef.fn1();
+            fnRef.fn2();
+            fnRef.fn1();
+            var fnRef2 = outerFn();
+            fnRef2.fn1();
+            fnRef2.fn2();
+            fnRef2.fn1();
+            //function outerFn() {
+            //    document.write("Outer function<br/>");
+            //    function innerFn() {
+            //        var innerVar = 0;
+            //        innerVar++;
+            //        document.write("Inner function\t");
+            //        document.write("innerVar = " + innerVar + "<br/>");
+            //    }
+            //    return innerFn;
+            //}
+            ////var fnRef = outerFn();
+            //var fnRef2 = outerFn();
+            ////fnRef();
+            ////fnRef();
             
+            //fnRef2();
+            //fnRef2();
+
+            //var globalVar = 0;
+            //function outerFn() {
+            //    document.write("Outer function<br/>");
+            //    function innerFn() {
+            //        globalVar++;
+            //        document.write("Inner function\t");
+            //        document.write("globalVar = " + globalVar + "<br/>");
+            //    }
+            //    return innerFn;
+            //}
+            //var fnRef = outerFn();
+            //fnRef();
+            //fnRef();
+            //var fnRef2 = outerFn();
+            //fnRef2();
+            //fnRef2();
+
+            function outerFn() {
+                var outerVar = 0;
+                document.write("Outer function<br/>");
+                function innerFn() {
+                    outerVar++;
+                    document.write("Inner function\t");
+                    document.write("outerVar = " + outerVar + "<br/>");
+                }
+                return innerFn;
+            }
+            var fnRef = outerFn();
+            fnRef();
+            fnRef();
+            var fnRef2 = outerFn();
+            fnRef2();
+            fnRef2();
         });
 
-        var s = new RegExp();
-        var o = Object.create(Object.prototype);
-
-        function test(o) {
-            var i = o;
-            if (typeof o == "object") {
-                var j = o;
-                for (var k = 0; k < 10; k++) {
-                    console.log(k);
-                }
-                console.log(k);
-            }
-            console.log(j); 
-        }
-
-        //判断两个数组是否相等
-        function equalArrays(a, b) {
-            if (a.length != b.length) return false;
-            for (var i = 0; i < a.length; i++) {
-                if (a[i] != b[i]) return false;
-            }
-            return true;
-        }
+       
     </script>
 </head>
 <body>
-
+    <div id="divTest">
+        <span>0</span> <span>1</span> <span>2</span> <span>3</span>
+    </div>
+    <div id="divTest2">
+        <span>0</span> <span>1</span> <span>2</span> <span>3</span>
+    </div>
 </body>
 </html>
