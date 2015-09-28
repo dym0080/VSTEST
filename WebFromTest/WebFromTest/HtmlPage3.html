@@ -6,6 +6,11 @@
     <script src="_Javascript/jquery-1.8.2.js"></script>
     <script type="text/javascript">
         $(function () {
+
+            var f = new Function("x", "y", "return x*y;");
+            等价于：
+            var f = function (x, y) { return x * y; };
+
             function outerFn() {
                 var outerVar = 0;
                 document.write("Outer function<br/>");
