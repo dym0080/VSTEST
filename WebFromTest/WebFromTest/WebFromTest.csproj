@@ -115,9 +115,11 @@
     <Content Include="_Javascript\Highcharts\themes\grid.js" />
     <Content Include="_Javascript\Highcharts\themes\sand-signika.js" />
     <Content Include="_Javascript\Highcharts\themes\skies.js" />
+    <Content Include="_Javascript\Complex.js" />
     <Content Include="_Javascript\jquery-1.8.2.js" />
     <Content Include="_Javascript\jquery-1.8.2.min.js" />
     <Content Include="_Javascript\jquery.js" />
+    <Content Include="_Javascript\Set.js" />
     <Content Include="_Javascript\winpop.css" />
     <Content Include="_Javascript\winpop.js" />
   </ItemGroup>
