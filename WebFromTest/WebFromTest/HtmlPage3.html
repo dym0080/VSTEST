@@ -1,21 +1,51 @@
-﻿<!DOCTYPE html>
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
-    <script type="text/javascript">
-        function as() {
-            var radios = document.getElementsByName("gander"); //遍历name为gander的值然后输出
-            for (var radio = 0; radio < radios.length; radio++) {
-                var i = radios[radio];
-                alert(i.value);
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <script>
+        function setCookie(name, value, iDay) {
+            var oDate = new Date();
+            oDate.setDate(oDate.getDate() + iDay);  //用来设置过期时间用的，获取当前时间加上传进来的iDay就是过期时间
+
+            document.cookie = name + '=' + value + ';expires=' + oDate;
+        };
+
+        function getCookie(name) {
+            var arr = document.cookie.split('; ');  //多个cookie值是以; 分隔的，用split把cookie分割开并赋值给数组
+
+            for (var i = 0; i < arr[i].length; i++)  //历遍数组
+            {
+                var arr2 = arr[i].split('=');  //原来割好的数组是：user=simon，再用split('=')分割成：user simon 这样可以通过arr2[0] arr2[1]来分别获取user和simon
+                if (arr2[0] == name)  //如果数组的属性名等于传进来的name
+                {
+                    return arr2[1];  //就返回属性名对应的值
+                }
+                return '';  //没找到就返回空
             }
-        }
+        };
+
+        function removeCookie(name) {
+            setCookie(name, 1, -1);  //-1就是告诉系统已经过期，系统就会立刻去删除cookie
+        };
+
+        window.onload = function () {
+            var form = document.getElementById('form');
+            var user = document.getElementsByName('user')[0];
+
+            form.onsubmit = function () {
+                setCookie('user', user.value, 14);
+            };
+            user.value = getCookie('user');
+        };
     </script>
 </head>
+
 <body>
-    <input type="radio" name="gander" value="男" /> 男
-    <input type="radio" name="gander" value="保密" /> 保密
-    <input type="radio" name="gander" value="女" /> 女
-    <input type="button" value="选择" onclick="as()" />
+    <form action="http://www.baidu.com" id="form">
+        用户名：<input type="text" name="user" /><br />
+        密码：<input type="password" name="pass" /><br />
+        <input type="submit" value="登录" />
+    </form>
 </body>
 </html>
