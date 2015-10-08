@@ -15,8 +15,15 @@ namespace KZTAPP1
     {
         static void Main(string[] args)
         {
-            
 
+            List<string> ss1 = new List<string>() { "111", "222" };
+
+            List<string> ss = new List<string>() { "333", "444" };
+            ss.AddRange(ss1);
+            foreach (var item in ss)
+            {
+                Console.WriteLine(item);
+            }
             Console.ReadKey();
         }
 
