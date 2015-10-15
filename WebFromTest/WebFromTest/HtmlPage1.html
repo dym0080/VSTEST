@@ -10,20 +10,18 @@
     </style>
 
     <script type="text/javascript">
-        var fullname = 'John Doe';
-        var obj = {
-            fullname: 'Colin Ihrig',
-            prop: {
-                fullname: 'Aurelio De Rosa',
-                getFullname: function () {
-                    return this.fullname;
-                }
+        var person = {
+            name: "Brendan Eich",
+            hello: function (thing) {
+                console.log(this + " says hello " + thing);
             }
-        };
-        console.log(obj.prop.getFullname());
-        var test = obj.prop.getFullname;
-        console.log(test());
+        }
 
+        // this:
+        person.hello("world")
+
+        // desugars to this:
+        person.hello.call(person, "world");
 
 
     </script>
