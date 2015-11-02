@@ -7,10 +7,38 @@
 
     if (!window.DYM) { window['DYM'] = {} };
 
-    function isCompatible(other) { };
+    function isCompatible(other) {
+        //使用能力检测来检查必要条件
+        if(other===false
+            ||!Array.prototype.push
+            ||!Object.hasOwnProperty
+            ||!document.createElement
+            ||!document.getElementsByTagName
+            ){
+                return false;
+            }
+            return true;
+    };
     window['DYM']['isCompatible'] = isCompatible;
 
-    function $() { };
+    function $() {
+        var elements = new Array();
+
+        for (var i = 0; i <arguments.length; i++) {
+            var element = arguments[i];
+
+            if(typeof element =="string"){
+                element = document.getElementById(element);
+            }
+
+            if (arguments.length == 1) {
+                return element;
+            }
+
+            elements.push(element);
+        }
+        return elements;
+    };
     window['DYM']['$'] = $;
 
     function addEvent(node, type, listener) { };
