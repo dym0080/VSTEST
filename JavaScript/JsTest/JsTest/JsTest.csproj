@@ -163,6 +163,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Book\JavaScript.DOM高级程序设计\ADS-final-verbose.js" />
     <Content Include="Book\JavaScript.DOM高级程序设计\Charpt1\DYM-start.js" />
     <Content Include="Book\JavaScript.DOM高级程序设计\Charpt1\HtmlPage1.2.html" />
     <Content Include="Contact.aspx" />
