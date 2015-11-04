@@ -24,27 +24,71 @@
     function $() {
         var elements = new Array();
 
+        //查找作为参数提供的所有元素
         for (var i = 0; i <arguments.length; i++) {
             var element = arguments[i];
 
+            //如果该参数是一个字符串那假设它是一个id
             if(typeof element =="string"){
                 element = document.getElementById(element);
             }
 
+            //如果只提供一个参数则立刻返回这个元素
             if (arguments.length == 1) {
                 return element;
             }
 
+            //否则，将它添加到数组中
             elements.push(element);
         }
+
+        //返回包含多个被请求元素的数组
         return elements;
     };
     window['DYM']['$'] = $;
 
-    function addEvent(node, type, listener) { };
+    function addEvent(node, type, listener) {
+        //使用前面的方法检查兼容性以保证平稳退化
+        if (!isCompatible()) {return false;}
+
+        if (!(node = $(node))) { return false; }
+
+        if (node.addEventListener) {
+            //W3C方法-- 这里不理解
+            node.addEventListener(type, listener, false);
+            return true;
+        } else if (node.attachEvent) {
+            //MSIE的方法 --这里不理解
+            node['e' + type + listener] = listener;
+            node[type + listener] = function () {
+                node['e' + type + listener](window.event);
+            }
+            node.attachEvent('on' + type, node[type + listener]);
+            return true;
+        }
+
+        //若两种方法都不具备则返回False
+        return false;
+    };
     window['DYM']['addEvent'] = addEvent;
 
-    function removeEvent(node, type, listener) { };
+    function removeEvent(node, type, listener) {
+        if (!(node = $(node))) { return false; }
+
+        if (node.removeEventListener) {
+            //W3C方法-- 这里不理解
+            node.removeEventListener(type, listener, false);
+            return true;
+        } else if (node.detachEvent) {
+            //MSIE的方法 --这里不理解
+            node.detachEvent('on' + type, node[type + listener]);
+            node[type + listener] = null;
+            return true;
+        }
+
+        //若两种方法都不具备则返回False
+        return false;
+    };
     window['DYM']['removeEvent'] = removeEvent;
 
     function getElementsByClassName(className, tag, parent) { };
