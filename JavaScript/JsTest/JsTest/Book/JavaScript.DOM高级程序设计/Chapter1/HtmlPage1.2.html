@@ -6,6 +6,42 @@
     <script type="text/javascript">
         //javascript 代码段
 
+        //构造函数
+        function myConstructor(message) {
+            this.myMessage = message;
+
+            //私有变量
+            var separator = ' -';
+            var myOwner = this;
+
+            //私有方法
+            function alertMessage() {
+                alert(myOwner.myMessage);
+            }
+            alertMessage();
+
+            //特权方法（也是公有方法）
+            this.appendToMessage = function (str) {
+                this.myMessage += separator + str;
+                alertMessage();
+            }
+
+            //公有方法
+            myConstructor.prototype.clearMessage = function (str) {
+                this.myMessage = '';
+            }
+
+            //静态属性
+            myConstructor.name = 'Jeff';
+
+            //静态方法
+            myConstructor.alertName = function () {
+                alert(this.name);
+            }
+        }
+
+
+
         (function () {
 
             function $(id) {
@@ -21,6 +57,10 @@
         })();
 
         myNamespace.showNodeName('example');
+
+
+
+
     </script>
 </head>
 <body>

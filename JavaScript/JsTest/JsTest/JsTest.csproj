@@ -1470,6 +1470,8 @@
     <Content Include="Book\JavaScript.DOM高级程序设计\ADS-final-verbose.js" />
     <Content Include="Book\JavaScript.DOM高级程序设计\Chapter1\DYM-start.js" />
     <Content Include="Book\JavaScript.DOM高级程序设计\Chapter1\HtmlPage1.2.html" />
+    <Content Include="Book\JavaScript.DOM高级程序设计\Chapter2\override.html" />
+    <Content Include="Book\JavaScript.DOM高级程序设计\Chapter2\override.js" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
