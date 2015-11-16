@@ -1472,6 +1472,7 @@
     <Content Include="Book\JavaScript.DOM高级程序设计\Chapter1\HtmlPage1.2.html" />
     <Content Include="Book\JavaScript.DOM高级程序设计\Chapter2\override.html" />
     <Content Include="Book\JavaScript.DOM高级程序设计\Chapter2\override.js" />
+    <Content Include="Book\JavaScript.DOM高级程序设计\test1.html" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -1638,6 +1639,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="test\Flight.html" />
+    <Content Include="test\index.html" />
+    <Content Include="test\ss.js" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />

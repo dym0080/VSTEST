@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        var person = function () {
+            this.Name = "a";
+            this.Age = 20;
+        };
+        var p = new person();
+        Object.defineProperty(p, "Name", {
+            configurable: true,
+            writable:true
+        });
+
+        delete p.Name;
+        //p.Name = "b";
+
+        console.log(p.Name);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
