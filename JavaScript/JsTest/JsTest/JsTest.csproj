@@ -1639,9 +1639,13 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+<<<<<<< HEAD
     <Content Include="test\Flight.html" />
     <Content Include="test\index.html" />
     <Content Include="test\ss.js" />
+=======
+    <Content Include="test\f.html" />
+>>>>>>> ebf9a01aa41fa0b3639cf47aaf6fe94c0d35ad46
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />

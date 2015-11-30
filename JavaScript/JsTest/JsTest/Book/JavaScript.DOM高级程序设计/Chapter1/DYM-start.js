@@ -168,4 +168,30 @@
 
     };
     window['DYM']['prependChild'] = prependChild;
+
+    function bindFunction(obj,func){
+        return function(){
+            func.apply(obj,arguments);
+        };
+    };
+    window['DYM']['bindFunction'] = bindFunction;
+
+    function myLogger(id){
+        id=id||'DYMLogWindow';
+        var logWindow=null;
+        var createWindow=function(){
+
+        };
+
+        this.writeRaw=function(message){};
+
+    }
+    myLogger.prototype={
+        write:function(message){},
+        header:function(message){}
+    };
+    if(!window.DYM){window['DYM']={};}
+    window['DYM']['log'] = new myLogger();
+
+
 })();

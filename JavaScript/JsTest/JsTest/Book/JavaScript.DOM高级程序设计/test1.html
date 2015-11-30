@@ -4,20 +4,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <script type="text/javascript">
-        var person = function () {
-            this.Name = "a";
-            this.Age = 20;
+        
+        function JSClass() {
+            this.m_Text = 'division element';
+            this.m_Element = document.createElement('div');
+            this.m_Element.innerHTML = this.m_Text;
+            this.m_Element.addEventListener('click', this.func);
+            // this.m_Element.onclick = this.func;
+        }
+
+        JSClass.prototype.Render = function () {
+            document.body.appendChild(this.m_Element);
+        }
+
+        JSClass.prototype.func = function () {
+            alert(this.m_Text);
         };
-        var p = new person();
-        Object.defineProperty(p, "Name", {
-            configurable: true,
-            writable:true
-        });
 
-        delete p.Name;
-        //p.Name = "b";
-
-        console.log(p.Name);
+        var jc = new JSClass();
+        jc.Render(); 
+        jc.func(); 
     </script>
 </head>
 <body>

@@ -4,10 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <script type="text/javascript">
-        window.onload = function () {
-            var airplanes = ["MU", "CA", "CZ"];
-            var result = window.frames[0].flight.SearchFlight(airplanes);
+        var s = 'aaabbbcccaaabbbaaa';
+        var obj = {};
+        for (var i = 0; i < s.length; i++) {
+            
+            if (obj[s[i]]) {
+                console.log(obj[s[i]]);
+            }
         }
+        
     </script>
 </head>
 <body>

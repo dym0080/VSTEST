@@ -1,10 +1,11 @@
-initPage() {
-    function doubleCheck() {
-        this.message = 'Are you sure you want to leave?';
-    }
-    doubleCheck.prototype.sayGoodbye = function() {
-        return confirm(this.message);
-    }
+
+function doubleCheck() {
+    this.message = 'Are you sure you want to leave?';
+}
+doubleCheck.prototype.sayGoodbye = function() {
+    return confirm(this.message);
+}
+var initPage=function() {
     var clickedLink = new doubleCheck();
     var links = document.getElementsByTagName('a');
 
