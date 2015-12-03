@@ -37,6 +37,9 @@
                         dir: 'auto'
                     };
                     var notification = new Notification('Here am I', config);
+                    setTimeout(function () {
+                        notification.close();
+                    }, 5000);
                 });
             });
         });
