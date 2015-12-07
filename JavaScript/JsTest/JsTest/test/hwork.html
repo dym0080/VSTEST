@@ -1,57 +1,20 @@
 ﻿<!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <style type="text/css">
-        #button {
-            font-size: 1.1rem;
-            width: 200px;
-            height: 60px;
-            border: 2px solid #df7813;
-            border-radius: 20px/50px;
-            background: #fff;
-            color: #df7813;
+        body span {
+            color: red;
         }
-
-            #button:hover {
-                background: #df7813;
-                color: #fff;
-                transition: 0.4s ease;
-            }
     </style>
-    <script type="text/javascript">
-        //var notification=new Notification('Notification Title',{
-        //body:'Your Message'
-        //});
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('button').addEventListener('click', function () {
-                if (!('Notification' in window)) {
-                    alert('sorry,您的浏览器不支持通知功能');
-                    return;
-                }
-                Notification.requestPermission(function (permission) {
-                    var config = {
-                        body: 'Thanks for clicking that button. Hope you liked.',
-                        icon: 'https://cdn2.iconfinder.com/data/icons/ios-7-style-metro-ui-icons/512/MetroUI_HTML5.png',
-                        dir: 'auto'
-                    };
-                    var notification = new Notification('Here am I', config);
-                    setTimeout(function () {
-                        notification.close();
-                    }, 5000);
-                });
-            });
-        });
-
-    </script>
-
 </head>
-
 <body>
-    <div>
-        <button id="button">Read your notification</button>
-    </div>
+    <span>我是span1</span>
+    <ul>
+        <li>
+            <ul><span>我是span2</span></ul>
+        </li>
+    </ul>
 </body>
-
 </html>
