@@ -4,17 +4,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <style type="text/css">
-        body span {
-            color: red;
-        }
+       
     </style>
+    <script type="text/javascript">
+
+
+        var name = "The Window";
+        var object = {
+            name: "My Object",
+            getNameFunc: function () {
+                return function () {
+                    return this.name;
+                };
+            }
+        };
+        alert(object.getNameFunc()());
+
+       
+
+    </script>
+
 </head>
 <body>
-    <span>我是span1</span>
-    <ul>
-        <li>
-            <ul><span>我是span2</span></ul>
-        </li>
-    </ul>
 </body>
 </html>
