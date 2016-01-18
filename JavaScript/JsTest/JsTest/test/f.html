@@ -1,24 +1,51 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <script src="../Scripts/jquery-1.10.2.min.js"></script>
-    <script src="../Scripts/action.js"></script>
-    <script type="text/javascript">
-        action.add({
-            'my-action': function () {
-                alert("aaaaa");
-            },
-        })
-    </script>
-
+    <meta charset="UTF-8" />
+    <title>Document</title>
     
-   
 </head>
 <body>
-    <div>
-        <button data-action="my-action">btn</button>
-    </div>
+    <input type="button" value="btn" id="btn" />
+    <script type="text/javascript">
+        var btn = document.getElementById('btn');
+
+
+        function show() {
+            alert('事件监听');
+        }
+
+        var eventUntil = {
+            //添加事件
+            Add: function (obj, type, Event) {
+                if (obj.addEventListerner) {     //兼容 谷歌，火狐
+                    obj.addEventListerner(type, Event, false);
+                }
+                else if (obj.attachEvent) {    //兼容IE，Opera
+                    obj.attachEvent('on' + type, Event);
+                }
+                else {
+                    obj['on' + type] = Event;
+                }
+            },
+            //删除事件
+            Remove: function (obj, type, Event) {
+                if (obj.removeEventListerner) {     //兼容 谷歌，火狐
+                    obj.removeEventListerner(type, Event, false);
+                }
+                else if (obj.detachEvent) {    //兼容IE，Opera
+                    obj.detachEvent('on' + type, Event);
+                }
+                else {
+                    obj['on' + type] = null;
+                }
+            }
+
+        }
+        eventUntil.Add(btn, 'click', show);
+
+
+    </script>
+
 </body>
 </html>
