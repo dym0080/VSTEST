@@ -1699,9 +1699,16 @@
     <Content Include="Site.Master" />
     <Content Include="test\f.html" />
     <Content Include="test\Flight.html" />
+    <Content Include="test\FormWork.aspx" />
+    <Content Include="test\HtmlOA.html" />
     <Content Include="test\hwork.html" />
     <Content Include="test\index.html" />
     <Content Include="test\eventUitity.js" />
+    <Content Include="test\keyEvent\css\style.css" />
+    <Content Include="test\keyEvent\index.html" />
+    <Content Include="test\keyEvent\js\script.js" />
+    <Content Include="test\Script.js" />
+    <Content Include="test\Style.css" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -1875,6 +1882,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="test\FormWork.aspx.cs">
+      <DependentUpon>FormWork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test\FormWork.aspx.designer.cs">
+      <DependentUpon>FormWork.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
