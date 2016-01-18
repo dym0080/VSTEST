@@ -13,13 +13,13 @@
             width: 200px;
             height: 200px;
             background: red;
-            position:absolute;
-            /*filter: alpha(opacity=30);
-            opacity: 0.3;*/
+            filter: alpha(opacity=30);
+            opacity: 0.3;
         }
     </style>
     <script type="text/javascript">
         var timer = null;
+        var alpha = 30;
         window.onload=function(){
             var oDiv = document.getElementById('div1');
             oDiv.onmousemove = function () {
@@ -32,22 +32,27 @@
         function StartMove(val) {
             var oDiv = document.getElementById('div1');
             clearInterval(timer);
-            timer = setInterval(function () {
-                var speed;
-                if (oDiv.offsetLeft > val) {
-                    speed = -5;
+            var speed;
+            timer= setInterval(function () {
+                if (alpha > val) {
+                    speed = -10;
                 } else {
-                    speed = 5;
+                    speed = 10;
                 }
-                if (oDiv.offsetLeft == val) {
+                if (alpha == val) {
                     clearInterval(timer);
                 } else {
-                    oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+                    alpha += speed;
+                    oDiv.style.opacity = alpha / 100;
+                    oDiv.style.filter = "alpha(opacity=" + alpha + ")";
                 }
             }, 30);
         }
 
     </script>
+
+
+
 </head>
 <body>
     <div id='div1'></div>
