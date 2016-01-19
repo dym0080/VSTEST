@@ -12,3 +12,5 @@ override();
 
 // Call the alert in the window scope
 alert('alert from outside');
+
+//overridden£ºalert   window.alert  alert from outside

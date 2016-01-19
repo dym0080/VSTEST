@@ -16,8 +16,9 @@ function myConstructor(message) {
 }
 
 var myObject = new myConstructor('Hello World!');
-myObject.appendToMessage('Jeff');
+
+//myObject.appendToMessage('Jeff');
 
 
-// This will fail
-myObject.alertMessage();
+//// This will fail
+//myObject.alertMessage();

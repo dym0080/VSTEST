@@ -1,6 +1,7 @@
 function registerListener(anchor,myNum) {
-	ADS.addEvent(anchor, 'click', function() {
-        alert('My id is anchor' + myNum + ' and initAnchors i is ' + i);
+    ADS.addEvent(anchor, 'click', function () {
+        var n = i;
+        alert('My id is anchor' + myNum + ' and initAnchors i is ' + n);
 	});
 }
 

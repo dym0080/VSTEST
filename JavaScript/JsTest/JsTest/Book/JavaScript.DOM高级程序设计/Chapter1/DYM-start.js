@@ -1,12 +1,8 @@
 ﻿
 
-
+//背景：学习“[JavaScript.DOM高级程序设计]桑贝斯.扫描版”这本书，根据内容一步一步开始构建自己的库，这也是本书作者所说的核心价值所在。
 
 (function () {
-
-    
-
-
     if (!window.DYM) { window['DYM'] = {} };
 
     function isCompatible(other) {
