@@ -1,0 +1,110 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title></title>
+    <meta charset='UTF-8' />
+    <style type='text/css'>
+        *{margin:0;padding:0;}
+        li{
+            list-style:none;
+            width:200px;
+            height:100px;
+            background-color:red;
+            margin-bottom:20px;
+            filter:alpha(opacity=30);
+            opacity:0.3;
+        }
+    </style>
+    <script type="text/javascript">
+        /* 变宽和透明度使用同一个定时器会导致一个bug：宽度不能在200-400之间变化的。解决办法使用两个定时定时器进行区分。
+        window.onload = function () {
+            var arrLi = document.getElementsByTagName('li');
+            for (var i = 0; i < arrLi.length; i++) {
+                arrLi[i].timer = null;
+                arrLi[i].alpha=30;
+                arrLi[i].onmouseover = function () {
+                    StartMove(this, 400,100);
+                };
+                arrLi[i].onmouseout = function () {
+                    StartMove(this, 200,30);
+                }
+            }
+        }
+        function StartMove(obj, targetWidth,targetOpacity) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                var speedWidth = (targetWidth - obj.offsetWidth) / 8;
+                speedWidth = speedWidth > 0 ? Math.ceil(speedWidth):Math.floor(speedWidth);
+                if (obj.offsetWidth == targetWidth) {
+                    clearInterval(obj.timer);
+                } else {
+                    obj.style.width = obj.offsetWidth + speedWidth + 'px';
+                }
+                var speedOpacity = 0;
+                if (obj.alpha > targetOpacity) {
+                    speedOpacity = -10;
+                } else {
+                    speedOpacity = 10;
+                }
+                if (obj.alpha == targetOpacity) {
+                    clearInterval(obj.timer);
+                } else {
+                    obj.alpha += speedOpacity;
+                    obj.style.opacity = obj.alpha / 100;
+                    obj.style.filter = "alpha(opacity=" + obj.alpha + ")";
+                }
+            }, 30);
+        }
+        */
+        window.onload = function () {
+            var arrLi = document.getElementsByTagName('li');
+            for (var i = 0; i < arrLi.length; i++) {
+                arrLi[i].timer1 = null;
+                arrLi[i].timer2 = null;
+                arrLi[i].alpha = 30;
+                arrLi[i].onmouseover = function () {
+                    StartMove(this, 400, 100);
+                };
+                arrLi[i].onmouseout = function () {
+                    StartMove(this, 200, 30);
+                }
+            }
+        }
+        function StartMove(obj, targetWidth, targetOpacity) {
+            clearInterval(obj.timer1);
+            clearInterval(obj.timer2);
+            obj.timer1 = setInterval(function () {
+                var speedWidth = (targetWidth - obj.offsetWidth) / 8;
+                speedWidth = speedWidth > 0 ? Math.ceil(speedWidth) : Math.floor(speedWidth);
+                if (obj.offsetWidth == targetWidth) {
+                    clearInterval(obj.timer1);
+                } else {
+                    obj.style.width = obj.offsetWidth + speedWidth + 'px';
+                }
+            }, 30);
+            obj.timer2 = setInterval(function () {
+                var speedOpacity = 0;
+                if (obj.alpha > targetOpacity) {
+                    speedOpacity = -10;
+                } else {
+                    speedOpacity = 10;
+                }
+                if (obj.alpha == targetOpacity) {
+                    clearInterval(obj.timer2);
+                } else {
+                    obj.alpha += speedOpacity;
+                    obj.style.opacity = obj.alpha / 100;
+                    obj.style.filter = "alpha(opacity=" + obj.alpha + ")";
+                }
+            }, 30);
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

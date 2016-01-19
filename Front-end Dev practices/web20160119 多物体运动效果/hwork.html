@@ -1,0 +1,54 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title></title>
+    <meta charset='UTF-8' />
+    <style type='text/css'>
+        *{margin:0;padding:0;}
+        li{
+            list-style:none;
+            width:200px;
+            height:100px;
+            background-color:yellow;
+            margin-bottom:20px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var arrLi = document.getElementsByTagName('li');
+            for (var i = 0; i < arrLi.length; i++) {
+                arrLi[i].timer = null;
+                arrLi[i].onmouseover = function () {
+                    StartMove(this, 400);
+                };
+                arrLi[i].onmouseout = function () {
+                    StartMove(this, 200);
+                }
+            }
+        }
+        function StartMove(obj, targetWidth) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                var speed = (targetWidth - obj.offsetWidth) / 8;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                if (obj.offsetWidth == targetWidth) {
+                    clearInterval(obj.timer);
+                } else {
+                    obj.style.width = obj.offsetWidth + speed + 'px';
+                }
+            }, 30);
+            
+        }
+           
+    </script>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+
+</html>
