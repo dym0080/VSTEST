@@ -23,10 +23,23 @@
 
         var jc = new JSClass();
         jc.Render(); 
-        jc.func(); 
+        jc.func();
+
     </script>
 </head>
 <body>
+    <li id="$commentId" class="$commentClass" style="background-color:white">
+        <a href="$countHref" class="counter" title="$countTitle" onclick="window.open(this.href); return false;">$countContent</a>
+        <span class="commentauthor"><a href="$authorHref" rel="external nofollow">$authorContent</a></span>
+        <small class="comment-meta">
+            <a href="$metaHref" title="$metaTitle">$metaContent</a>
+        </small>
+        <div class="comment-content">
+            $commentContent
+        </div>
+    </li>
+    <a href="http://wordpress.org" rel="external"> Myword perss</a>
 
 </body>
 </html>
+

@@ -13,9 +13,9 @@
             ||!document.createElement
             ||!document.getElementsByTagName
             ){
-                return false;
-            }
-            return true;
+            return false;
+        }
+        return true;
     };
     window['DYM']['isCompatible'] = isCompatible;
 
@@ -189,5 +189,75 @@
     if(!window.DYM){window['DYM']={};}
     window['DYM']['log'] = new myLogger();
 
+    //获取浏览器窗口大小
+    function getBrowserWindowSize(){
+        var de=document.documentElement;
+        return{
+            'width':(window.innerWidth||(de&&de.clientWidth)||document.body.clientWidth),
+            'height':(window.innerHeight||de&&de.clientHeight||document.body.clientHeight)
+        }
+    };
+    window['DYM']['getBrowserWindowSize'] =getBrowserWindowSize;
+
+    /********************************
+    * Chapter 3
+    *********************************/
+    window['ADS']['node'] = {
+        ELEMENT_NODE                : 1,
+        ATTRIBUTE_NODE              : 2,
+        TEXT_NODE                   : 3,
+        CDATA_SECTION_NODE          : 4,
+        ENTITY_REFERENCE_NODE       : 5,
+        ENTITY_NODE                 : 6,
+        PROCESSING_INSTRUCTION_NODE : 7,
+        COMMENT_NODE                : 8,
+        DOCUMENT_NODE               : 9,
+        DOCUMENT_TYPE_NODE          : 10,
+        DOCUMENT_FRAGMENT_NODE      : 11,
+        NOTATION_NODE               : 12
+    };
+
+    //获取指定节点中的所有Element节点
+    function walkElementsLinear(func,node){
+        var root=node||window.document;
+        var nodes=root.getElementsByTagName('*');
+        for (var i = 0; i < nodes.length; i++) {
+            func.call(nodes[i]);
+        }
+    }
+    window['DYM']['walkElementsLinear'] =walkElementsLinear;
+
+    //通过指定节点node，并通过节点的深度，递归获取DOM树
+    function walkTheDOMRecursive(func,node,depth,returnedFromParent){
+        var root=node||window.document;
+        //var returnedFromParent=func.call(root,depth++,returnedFromParent);
+        //var node=root.firstChild;
+        returnedFromParent=func.call(root,depth++,returnedFromParent);
+        node=root.firstChild;
+        while(node){
+            walkTheDOMRecursive(func,node,depth,returnedFromParent);
+            node=node.nextSibling;
+        }
+    }
+    window['DYM']['walkTheDOMRecursive'] =walkTheDOMRecursive;
+
+    //查找每个节点的属性--copy
+    function walkTheDOMWithAttributes(node,func,depth,returnedFromParent) {
+        var root = node || window.document;
+        returnedFromParent = func(root,depth++,returnedFromParent);
+        if (root.attributes) {
+            for(var i=0; i < root.attributes.length; i++) {
+                walkTheDOMWithAttributes(root.attributes[i],func,depth-1,returnedFromParent);
+            }
+        }
+        if(root.nodeType != ADS.node.ATTRIBUTE_NODE) {
+            node = root.firstChild;
+            while(node) {
+                walkTheDOMWithAttributes(node,func,depth,returnedFromParent);
+                node = node.nextSibling;
+            }
+        }
+    };
+    window['DYM']['walkTheDOMWithAttributes'] = walkTheDOMWithAttributes;
 
 })();
