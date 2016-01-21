@@ -42,7 +42,7 @@ function myLogger(id) {
 		logWindow.style.left = left + 'px';
 
 		// Give it a fixed size and allow scrolling
-		logWindow.style.width = '200px';
+		logWindow.style.width = '600px';
 		logWindow.style.height = '200px';
 		logWindow.style.overflow = 'scroll';
 

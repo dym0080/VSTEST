@@ -5,41 +5,20 @@
     <title></title>
     <script type="text/javascript">
         
-        function JSClass() {
-            this.m_Text = 'division element';
-            this.m_Element = document.createElement('div');
-            this.m_Element.innerHTML = this.m_Text;
-            this.m_Element.addEventListener('click', this.func);
-            // this.m_Element.onclick = this.func;
+        window.onload = function () {
+            var inpu = document.getElementById("idd");
+            inpu.onclick = getMouseButton;
+
+            
+
         }
-
-        JSClass.prototype.Render = function () {
-            document.body.appendChild(this.m_Element);
-        }
-
-        JSClass.prototype.func = function () {
-            alert(this.m_Text);
-        };
-
-        var jc = new JSClass();
-        jc.Render(); 
-        jc.func();
-
     </script>
 </head>
 <body>
-    <li id="$commentId" class="$commentClass" style="background-color:white">
-        <a href="$countHref" class="counter" title="$countTitle" onclick="window.open(this.href); return false;">$countContent</a>
-        <span class="commentauthor"><a href="$authorHref" rel="external nofollow">$authorContent</a></span>
-        <small class="comment-meta">
-            <a href="$metaHref" title="$metaTitle">$metaContent</a>
-        </small>
-        <div class="comment-content">
-            $commentContent
-        </div>
-    </li>
-    <a href="http://wordpress.org" rel="external"> Myword perss</a>
+    <input type="button" id="idd" value="aaa" />
 
 </body>
 </html>
+
+
 

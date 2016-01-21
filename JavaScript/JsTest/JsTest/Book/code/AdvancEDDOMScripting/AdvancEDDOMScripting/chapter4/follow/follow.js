@@ -13,6 +13,7 @@ ADS.addEvent(window,'load',function() {
         // Position the object relative to the pointer
         object.style.left = pointer.x + 'px';
         object.style.top = pointer.y + 'px';
+        object.innerHTML = object.style.left+"  "+object.style.top;
     
     }
     // Attach the event listener to the document object's mousemove event

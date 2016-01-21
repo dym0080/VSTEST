@@ -28,7 +28,7 @@ ADS.addEvent(window,'load',function() {
     for(var i = 0 ; i < lists.length ; i++ ) {
         
         // Register an event listener for the click event
-        modifiedAddEvent(lists[i],'click',function() {
+        modifiedAddEvent(lists[i], 'click', function () {
             // Append the click order to the paragraph
             var append = document.createTextNode(':' + counter++);
             this.getElementsByTagName('p')[0].appendChild(append) ;

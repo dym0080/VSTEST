@@ -1,6 +1,27 @@
 ﻿
 
-//背景：学习“[JavaScript.DOM高级程序设计]桑贝斯.扫描版”这本书，根据内容一步一步开始构建自己的库，这也是本书作者所说的核心价值所在。
+//背景：学习“[JavaScript.DOM高级程序设计]桑贝斯”这本书，根据内容一步一步开始构建自己的库，这也是本书作者所说的核心价值所在。
+
+if(document.all&&!document.getElementById){
+    document.getElementById=function(id){
+        return document.all[id];
+    }
+}
+
+//生成重复的字符串
+if(!String.repeat){
+    String.prototype.repeat=function(i){
+        return new Array(i+1).join(this);
+    }
+}
+
+//清楚开头和结尾的空字符串
+if(!String.trim){
+    String.prototype.trim = function() {
+        return this.replace(/^\s+|\s+$/g,'');
+    }
+}
+
 
 (function () {
     if (!window.DYM) { window['DYM'] = {} };
@@ -259,5 +280,142 @@
         }
     };
     window['DYM']['walkTheDOMWithAttributes'] = walkTheDOMWithAttributes;
+
+    //处理嵌入的样式属性--copy
+    function camelize(s) {
+        return s.replace(/-(\w)/g, function (strMatch, p1){
+            return p1.toUpperCase();
+        });
+    }
+    window['DYM']['camelize'] = camelize;
+
+
+    /********************************
+    * Chapter 4
+    *********************************/
+    //阻止冒泡
+    function stopPropagation(event){
+        event=event||window.event;
+        if(event.stopPropagation){
+            event.stopPropagation();
+        }else{
+            event.cancelBubble=true;
+        }
+    }
+    window['DYM']['stopPropagation'] = stopPropagation;
+
+    //阻止默认行为
+    function preventDefault(event){
+        event=event||window.event;
+        if(event.preventDefault){
+            event.preventDefault();
+        }else{
+            event.returnValue=false;
+        }
+    }
+    window['DYM']['preventDefault'] = preventDefault;
+
+    //获取事件对象
+    function getEventObject(W3CEvent){
+        return W3CEvent||window.event;
+    }
+    window['DYM']['getEventObject'] = getEventObject;
+
+    //访问事件的目标元素
+    function getTarget(event){
+        event=event||getEventObject(event);
+
+        //前者是W3C中定义的属性，后者是IE中定义的属性
+        var target=event.target||event.srcElement;
+
+        //如果像Safai中一样是一个文本节点，重新将目标对象指定为父元素
+        if(target.nodeType==DYM.node.TEXT_NODE){
+            target=target.parentNode;
+        }
+
+        return target;
+    }
+    window['DYM']['getTarget'] = getTarget;
+
+    //获取单击了哪个鼠标键
+    function getMouseButton(event) {
+        event = event || getEventObject(event);
+        var buttons = {
+            'left': false,
+            'middle': false,
+            'right': false
+        };
+        if (event.toString && event.toString().indexOf('MosuseEvent') != -1) {
+            //W3C DOM
+            switch (event.button) {
+                case 0:
+                    buttons.left = true;
+                    break;
+                case 1:
+                    buttons.middle = true;
+                    break;
+                case 2:
+                    buttons.right = true;
+                    break;
+                default: break;
+            }
+        } else if (event.button) {
+            //IE
+            switch (event.button) {
+                case 1:
+                    buttons.left = true;
+                    break;
+                case 2:
+                    buttons.right = true;
+                    break;
+                case 3:
+                    buttons.left = true;
+                    buttons.right = true;
+                    break;
+                case 4:
+                    buttons.middle = true;
+                    break;
+                case 5:
+                    buttons.left = true;
+                    buttons.middle = true;
+                    break;
+                case 6:
+                    buttons.right = true;
+                    buttons.middle = true;
+                    break;
+                case 7:
+                    buttons.left = true;
+                    buttons.right = true;
+                    buttons.middle = true;
+                    break;
+                default:break;
+            }
+                    
+        } else {
+            return false;
+        }
+        return buttons;
+    }
+    window['DYM']['getMouseButton'] = getMouseButton;
+
+    //获取鼠标位置
+    function getPointerPositionInDocument(event){
+        event=event||getEventObject(event);
+        //兼容顺序分别为Safari、W3C、IE
+        //var x=event.pageX||event.clientX+document.body.scrollLeft||event.clientX+document.documentElement.scrollLeft;
+        var x=event.pageX||(event.clientX+(document.body.scrollLeft||document.documentElement.scrollLeft));
+        var y=event.pageY||(event.clientY+(document.body.scrollTop||document.documentElement.scrollTop));
+        return{'x':x,'y':y};
+    }
+    window['DYM']['getPointerPositionInDocument'] = getPointerPositionInDocument;
+
+    //获取键盘的按键代码及相关的ASCll值
+    function getKeyPressed(event){
+        event=event||getEventObject(event);
+        var code=event.keyCode;
+        var value=String.fromCharCode(code);
+        return{'code':code,'value':value};
+    }
+    window['DYM']['getKeyPressed'] = getKeyPressed;
 
 })();
