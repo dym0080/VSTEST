@@ -1,5 +1,5 @@
 
-//HTML×ªÒÆÎªDOM¶ÔÏó--copyÀ´µÄ
+//HTMLè½¬æ¢ä¸ºDOM ---COPYè¿‡æ¥çš„
 (function () {
 
 function encode(str) {
