@@ -83,8 +83,5 @@ myLogger.prototype = {
     }
 };
 
-if (!window.ADS) { window['ADS'] = {}; }
-window['ADS']['log'] = new myLogger();
 
-if (!console) var console = ADSLog;
 
