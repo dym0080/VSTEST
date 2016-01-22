@@ -418,4 +418,220 @@ if(!String.trim){
     }
     window['DYM']['getKeyPressed'] = getKeyPressed;
 
+   /********************************
+   * Chapter 5
+    *********************************/
+
+    //根据ID设置样式--copy
+    function setStyleById(element, styles) {
+        if(!(element = $(element))) return false;
+        for (property in styles) {
+            if(!styles.hasOwnProperty(property)) continue;
+    
+            if(element.style.setProperty) {
+                element.style.setProperty(
+                uncamelize(property,'-'),styles[property],null);
+            } else {
+                element.style[camelize(property)] = styles[property];
+            }
+        }
+        return true;
+    }
+    window['DYM']['setStyle'] = setStyleById;
+    window['DYM']['setStyleById'] = setStyleById;
+
+    //根据ClassName设置样式--copy
+    function setStylesByClassName(parent, tag, className, styles) {
+        if(!(parent = $(parent))) return false;
+        var elements = getElementsByClassName(className, tag, parent);
+        for (var e = 0 ; e < elements.length ; e++) {
+            setStyleById(elements[e], styles);
+        }
+        return true;
+    }
+    window['DYM']['setStylesByClassName'] = setStylesByClassName;
+
+    //根据TagName设置样式--copy
+    function setStylesByTagName(tagname, styles, parent) {
+        parent = $(parent) || document;
+        var elements = parent.getElementsByTagName(tagname);
+        for (var e = 0 ; e < elements.length ; e++) {
+            setStyleById(elements[e], styles);
+        }
+    }
+    window['DYM']['setStylesByTagName'] = setStylesByTagName;
+
+    //获取包含元素类名的数组--copy
+    function getClassNames(element) {
+        if(!(element = $(element))) return false;
+        return element.className.replace(/\s+/,' ').split(' ');
+    };
+    window['DYM']['getClassNames'] = getClassNames;
+
+    //检查元素中是否存在某个类--copy
+    function hasClassName(element, className) {
+        if(!(element = $(element))) return false;
+        var classes = getClassNames(element);
+        for (var i = 0; i < classes.length; i++) {
+            if (classes[i] === className) { return true; }
+        }
+        return false;
+    };
+    window['DYM']['hasClassName'] = hasClassName;
+
+    //为元素添加类--copy
+    function addClassName(element, className) {
+        if(!(element = $(element))) return false;
+        element.className += (element.className ? ' ' : '') + className;
+        return true;
+    };
+    window['DYM']['addClassName'] = addClassName;
+
+    //从元素中删除类--copy
+    function removeClassName(element, className) {
+        if(!(element = $(element))) return false;
+        var classes = getClassNames(element);
+        var length = classes.length
+        for (var i = length-1; i >= 0; i--) {
+            if (classes[i] === className) { delete(classes[i]); }
+        }
+        element.className = classes.join(' ');
+        return (length == classes.length ? false : true);
+    };
+    window['DYM']['removeClassName'] = removeClassName;
+
+    //添加新样式表--copy
+    function addStyleSheet(url,media) {
+        media = media || 'screen';
+        var link = document.createElement('LINK');
+        link.setAttribute('rel','stylesheet');
+        link.setAttribute('type','text/css');
+        link.setAttribute('href',url);
+        link.setAttribute('media',media);
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    window['DYM']['addStyleSheet'] = addStyleSheet;
+
+    //移除样式表--copy
+    function removeStyleSheet(url,media) {
+        var styles = getStyleSheets(url,media);
+        for(var i = 0 ; i < styles.length ; i++) {
+            var node = styles[i].ownerNode || styles[i].owningElement;
+            styles[i].disabled = true;
+            node.parentNode.removeChild(node);
+        }
+    }
+    window['DYM']['removeStyleSheet'] = removeStyleSheet;
+
+    //通过URL取得包含所有样式表的数组--copy
+    function getStyleSheets(url,media) {
+        var sheets = [];
+        for(var i = 0 ; i < document.styleSheets.length ; i++) {
+            if (url &&  document.styleSheets[i].href.indexOf(url) == -1) { continue; }
+            if(media) {
+                // Normaizle the media strings
+                media = media.replace(/,\s*/,',');
+                var sheetMedia;
+                
+                if(document.styleSheets[i].media.mediaText) {
+                    // DOM mehtod
+                    sheetMedia = document.styleSheets[i].media.mediaText.replace(/,\s*/,',');
+                    // Safari adds an extra comma and space
+                    sheetMedia = sheetMedia.replace(/,\s*$/,'');
+                } else {
+                    // MSIE
+                    sheetMedia = document.styleSheets[i].media.replace(/,\s*/,',');
+                }
+                // Skip it if the media don't match
+                if (media != sheetMedia) { continue; }
+            }
+            sheets.push(document.styleSheets[i]);
+        }
+        return sheets;
+    }
+    window['DYM']['getStyleSheets'] = getStyleSheets;
+
+    //编辑一条样式规则--copy
+    function editCSSRule(selector,styles,url,media) {
+        var styleSheets = (typeof url == 'array' ? url : getStyleSheets(url,media));
+
+        for ( i = 0; i < styleSheets.length; i++ ) {
+
+            // Retrieve the list of rules
+            // The DOM2 Style method is styleSheets[i].cssRules
+            // The MSIE method is styleSheets[i].rules
+            var rules = styleSheets[i].cssRules || styleSheets[i].rules;
+            if (!rules) { continue; }
+               
+            // Convert to uppercase as MSIIE defaults to UPPERCASE tags.
+            // this could cause conflicts if you're using case sensetive ids
+            selector = selector.toUpperCase();
+        
+            for(var j = 0; j < rules.length; j++) {
+                // Check if it matches
+                if(rules[j].selectorText.toUpperCase() == selector) {
+                    for (property in styles) {
+                        if(!styles.hasOwnProperty(property)) { continue; }
+                        // Set the new style property
+                        rules[j].style[camelize(property)] = styles[property];
+                    }
+                }
+            }
+        }
+    }
+    window['DYM']['editCSSRule'] = editCSSRule;
+
+    //添加一条CSS规则--copy
+    function addCSSRule(selector, styles, index, url, media) {
+        var declaration = '';
+
+        // Build the declaration string from the style object
+        for (property in styles) {
+            if(!styles.hasOwnProperty(property)) { continue; }
+            declaration += property + ':' + styles[property] + '; ';
+        }
+
+        var styleSheets = (typeof url == 'array' ? url : getStyleSheets(url,media));
+        var newIndex;
+        for(var i = 0 ; i < styleSheets.length ; i++) {
+            // Add the rule        
+            if(styleSheets[i].insertRule) {
+                // The DOM2 Style method
+                // index = length is the end of the list
+                newIndex = (index >= 0 ? index : styleSheets[i].cssRules.length);
+                styleSheets[i].insertRule(selector + ' { ' + declaration + ' } ', 
+                    newIndex);
+            } else if(styleSheets[i].addRule) {
+                // The Microsoft method
+                // index = -1 is the end of the list 
+                newIndex = (index >= 0 ? index : -1);
+                styleSheets[i].addRule(selector, declaration, newIndex);
+            }
+        }
+    }
+    window['DYM']['addCSSRule'] = addCSSRule;
+
+    //取得一个元素的计算样式--copy
+    function getStyle(element,property) {
+        if(!(element = $(element)) || !property) return false;
+        // Check for the value in the element's style property
+        var value = element.style[camelize(property)];
+        if (!value) {
+            // Retrieve the computed style value
+            if (document.defaultView && document.defaultView.getComputedStyle) {
+                // The DOM method
+                var css = document.defaultView.getComputedStyle(element, null);
+                value = css ? css.getPropertyValue(property) : null;
+            } else if (element.currentStyle) {
+                // The MSIE method
+                value = element.currentStyle[camelize(property)];
+            }
+        }
+        // Return an empty string rather than auto so that you don't
+        // have to check for auto values 
+        return value == 'auto' ? '' : value;
+    }
+    window['DYM']['getStyle'] = getStyle;
+    window['DYM']['getStyleById'] = getStyle;
+
 })();
