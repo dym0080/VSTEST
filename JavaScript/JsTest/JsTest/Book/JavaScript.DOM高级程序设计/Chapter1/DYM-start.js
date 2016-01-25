@@ -418,9 +418,9 @@ if(!String.trim){
     }
     window['DYM']['getKeyPressed'] = getKeyPressed;
 
-   /********************************
-   * Chapter 5
-    *********************************/
+    /********************************
+    * Chapter 5
+     *********************************/
 
     //根据ID设置样式--copy
     function setStyleById(element, styles) {
@@ -633,5 +633,61 @@ if(!String.trim){
     }
     window['DYM']['getStyle'] = getStyle;
     window['DYM']['getStyleById'] = getStyle;
+
+    /********************************
+    * Chapter 7
+    *********************************/
+
+    //解析JSON文本以生成一个对象或数组--copy
+    function parseJSON(s,filter) {
+        var j;
+
+        function walk(k, v) {
+            var i;
+            if (v && typeof v === 'object') {
+                for (i in v) {
+                    if (v.hasOwnProperty(i)) {
+                        v[i] = walk(i, v[i]);
+                    }
+                }
+            }
+            return filter(k, v);
+        }
+
+
+        // Parsing happens in three stages. In the first stage, we run the 
+        // text against a regular expression which looks for non-JSON 
+        // characters. We are especially concerned with '()' and 'new' 
+        // because they can cause invocation, and '=' because it can cause 
+        // mutation. But just to be safe, we will reject all unexpected 
+        // characters.
+
+        if (/^("(\\.|[^"\\\n\r])*?"|[,:{}\[\]0-9.\-+Eaeflnr-u \n\r\t])+?$/.
+                   test(s)) {
+
+            // In the second stage we use the eval function to compile the text 
+            // into a JavaScript structure. The '{' operator is subject to a 
+            // syntactic ambiguity in JavaScript: it can begin a block or an 
+            // object literal. We wrap the text in parens to eliminate 
+            // the ambiguity.
+
+            try {
+                j = eval('(' + s + ')');
+            } catch (e) {
+                throw new SyntaxError("parseJSON");
+            }
+        } else {
+            throw new SyntaxError("parseJSON");
+        }
+
+        // In the optional third stage, we recursively walk the new structure, 
+        // passing each name/value pair to a filter function for possible 
+        // transformation.
+
+        if (typeof filter === 'function') {
+            j = walk('', j);
+        }
+        return j;
+    };
 
 })();
