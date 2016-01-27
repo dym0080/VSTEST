@@ -1479,6 +1479,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\ads-bg.jpg" />
+    <Content Include="images\advancED.png" />
+    <Content Include="images\foed.png" />
+    <Content Include="images\fractal.jpg" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

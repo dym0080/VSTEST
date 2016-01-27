@@ -1,26 +1,33 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <script type="text/javascript">
-        
-            function AA(){
-                var a=b=10;
-            }
-            console.log(b);
-            console.log(a);
-            
-            
-
-        
-    </script>
-</head>
+<html>
 <body>
-    <input type="button" id="idd" value="aaa" />
+
+    <p>计数: <output id="result"></output></p>
+    <button onclick="startWorker()">开始 Worker</button>
+    <button onclick="stopWorker()">停止 Worker</button>
+    <br /><br />
+
+    <script>
+        var w;
+
+        function startWorker() {
+            if (typeof (Worker) !== "undefined") {
+                if (typeof (w) == "undefined") {
+                    w = new Worker("/example/html5/demo_workers.js");
+                }
+                w.onmessage = function (event) {
+                    document.getElementById("result").innerHTML = event.data;
+                };
+            }
+            else {
+                document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+            }
+        }
+
+        function stopWorker() {
+            w.terminate();
+        }
+    </script>
 
 </body>
 </html>
-
-
-

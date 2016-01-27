@@ -1,22 +1,22 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <script type="text/javascript">
-        var s = 'aaabbbcccaaabbbaaa';
-        var obj = {};
-        for (var i = 0; i < s.length; i++) {
-            
-            if (obj[s[i]]) {
-                console.log(obj[s[i]]);
-            }
+        function resCalc() {
+            numA = document.getElementById("num_a").value;
+            numB = document.getElementById("num_b").value;
+            document.getElementById("result").value = Number(numA) + Number(numB);
         }
-        
     </script>
 </head>
 <body>
-    <p>Index</p>
-    <iframe name="childFlight" src="Flight.html"></iframe>
+    <p>使用 output 元素的简易计算器：</p>
+    <form onsubmit="return false">
+        <input id="num_a" /> +
+        <input id="num_b" /> =
+        <output id="result" onforminput="resCalc()"></output>
+    </form>
+
 </body>
 </html>
