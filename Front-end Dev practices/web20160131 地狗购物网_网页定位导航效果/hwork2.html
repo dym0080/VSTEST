@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <title>地狗购物网——网页定位导航效果</title>
-    <style>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.js"></script>
+    <style type="text/css">
         * {
             margin: 0;
             padding: 0;
@@ -14,90 +15,96 @@
             line-height: 1.7;
         }
 
+        #content {
+            margin: 0 auto;
+            width: 800px;
+            padding: 20px;
+        }
+
         li {
             list-style: none;
         }
 
-        #content {
-            width: 800px;
-            margin: 0 auto;
+        #content h1 {
+            color: #08b;
+        }
+
+        .item {
             padding: 20px;
+            margin-bottom: 20px;
+            border: 1px dotted #08b;
         }
 
-            #content h1 {
-                color: #0088bb;
+            .item h2 {
+                font-size: 16px;
+                font-weight: bold;
+                border-bottom: 2px solid #08b;
+                margin-bottom: 10px;
             }
 
-            #content .item {
-                padding: 20px;
-                margin-bottom: 20px;
-                border: 1px dotted #0088bb;
+            .item li {
+                display: inline;
+                margin-right: 10px;
             }
 
-                #content .item h2 {
-                    font-size: 16px;
-                    font-weight: bold;
-                    border-bottom: 2px solid #0088bb;
-                    margin-bottom: 10px;
+                .item li a img {
+                    width: 230px;
+                    height: 230px;
+                    border: none;
                 }
 
-                #content .item li {
-                    display: inline;
-                    margin-right: 10px;
-                }
-
-                    #content .item li a img {
-                        width: 230px;
-                        height: 230px;
-                        border: none;
-                    }
-
-
-        /*请补充此处代码，让导航菜单在右侧绝对定位显示*/
-
-
+        #menu {
+            position: fixed;
+            left: 50%;
+            margin-left: 400px;
         }
 
-        #menu ul li a {
-            display: block;
-            margin: 5px 0;
-            font-size: 14px;
-            font-weight: bold;
-            color: #333;
-            width: 80px;
-            height: 50px;
-            line-height: 50px;
-            text-decoration: none;
-            text-align: center;
-        }
-
-            #menu ul li a:hover,
-            #menu ul li a.current {
-                color: #fff;
-                background: #0088bb;
+            #menu li a {
+                margin: 5px 0;
+                line-height: 50px;
+                text-decoration: none;
+                text-align: center;
+                font-weight: bold;
+                font-size: 14px;
+                width: 80px;
+                height: 50px;
+                color: #333;
+                display: block;
             }
 
-        /*ie6 hack*/
-        * html, * html body {
-            background-image: url(about:blank);
-            background-attachment: fixed;
-        }
-
-        * html #menu {
-            /*position: fixed;*/
-            position: absolute;
-            top: expression(((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+100+'px');
-        }
+                #menu li a:hover,
+                #menu li a.current {
+                    color: #fff;
+                    background: #0088bb;
+                }
     </style>
-    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.js"></script>
     <script>
-
-        //滚动条发生滚动时，要获取相应的值。
-
-        //请补充此处代码，让导航菜单实现在滚动条滚动的时候自动设置焦点
-
-
-        //给相应楼层的a 设置 current，取消其他链接的current
+        $(document).ready(function () {
+            //滚动条发生滚动时，要获取相应的值。
+            $(window).scroll(function () {
+                var top = $(document).scrollTop();
+                var items = $("#content").find(".item");
+                var currentId;
+                //请补充此处代码，让导航菜单实现在滚动条滚动的时候自动设置焦点
+                items.each(function () {
+                    var _this=$(this);
+                    var itemTop=_this.offset().top;
+                    if(top>itemTop-200){
+                        currentId="#"+_this.attr("id");
+                    }else{
+                        return false;
+                    }
+                });
+                //给相应楼层的a 设置 current，取消其他链接的current
+                var menu=$("#menu");
+                var currentLinkA=menu.find(".current");
+                if (currentId && currentLinkA.attr("href") != currentId) {
+                    currentLinkA.removeClass("current");
+                    menu.find("[href="+currentId+"]").addClass("current");
+                }
+                //console.log(top);
+            });
+        });
 
     </script>
 </head>
@@ -107,11 +114,11 @@
             <!--运用锚点，实现导航定位。-->
 
 
-            <li><a href="#" class="current">1F 男装</a></li>
-            <li><a href="#">2F 女装</a></li>
-            <li><a href="#">3F 美妆</a></li>
-            <li><a href="#">4F 数码</a></li>
-            <li><a href="#">5F 母婴</a></li>
+            <li><a href="#item1" class="current">1F 男装</a></li>
+            <li><a href="#item2">2F 女装</a></li>
+            <li><a href="#item3">3F 美妆</a></li>
+            <li><a href="#item4">4F 数码</a></li>
+            <li><a href="#item5">5F 母婴</a></li>
         </ul>
     </div>
     <div id="content">
