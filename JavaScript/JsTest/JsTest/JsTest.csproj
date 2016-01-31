@@ -1702,7 +1702,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
-    <Content Include="test\f.html" />
+    <Content Include="test\hwork2.html" />
     <Content Include="test\Flight.html" />
     <Content Include="test\FormWork.aspx" />
     <Content Include="test\HtmlOA.html" />
