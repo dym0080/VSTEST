@@ -1,247 +1,47 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>地狗购物网——网页定位导航效果</title>
-    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.js"></script>
-    <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-size: 12px;
-            line-height: 1.7;
-        }
-
-        #content {
-            margin: 0 auto;
-            width: 800px;
-            padding: 20px;
-        }
-
-        li {
-            list-style: none;
-        }
-
-        #content h1 {
-            color: #08b;
-        }
-
-        .item {
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px dotted #08b;
-        }
-
-            .item h2 {
-                font-size: 16px;
-                font-weight: bold;
-                border-bottom: 2px solid #08b;
-                margin-bottom: 10px;
-            }
-
-            .item li {
-                display: inline;
-                margin-right: 10px;
-            }
-
-                .item li a img {
-                    width: 230px;
-                    height: 230px;
-                    border: none;
-                }
-
-        #menu {
-            position: fixed;
-            left: 50%;
-            margin-left: 400px;
-        }
-
-            #menu li a {
-                margin: 5px 0;
-                line-height: 50px;
-                text-decoration: none;
-                text-align: center;
-                font-weight: bold;
-                font-size: 14px;
-                width: 80px;
-                height: 50px;
-                color: #333;
-                display: block;
-            }
-
-                #menu li a:hover,
-                #menu li a.current {
-                    color: #fff;
-                    background: #0088bb;
-                }
-    </style>
-    <script>
-        function hasClass(obj, cls) {
-            return obj.className.match(new RegExp("(\\s|^)" + cls + "(\\s|$)"));
-        }
-
-        function removeClass(obj, cls) {
-            if (hasClass(obj, cls)) {
-                //remove
-                var reg = new RegExp("(\\s|^)" + cls + "(\\s|$)");
-                obj.className = obj.className.replace(reg, "");
-            }
-        }
-
-        //定义getByClassName函数，让函数实现给对象增加class 
-        function addClass(obj, cls) {
-            if (!hasClass(obj, cls)) {
-                obj.className += " " + cls;
-            }
-        }
-        
-        window.onload = function () {
-            window.onscroll = function () {
-                var top = document.body.scrollTop || document.documentElement.scrollTop;
-                var items = document.getElementsByClassName('item');
-                var currentId;
-                for (var i = 0; i < items.length; i++) {
-                    var _this = items[i];
-                    var itemTop = _this.offsetTop;
-                    if (top > itemTop - 200) {
-                        currentId =_this.id;
-                    } else {
-                        break;
-                    }
-                }
-                var menu = document.getElementById('menu');
-                var links = menu.getElementsByTagName('a');
-                if (currentId) {
-                    for (var j = 0; j < links.length; j++) {
-                        var link = links[j];
-                        if (link.getAttribute("href") != "#" + currentId) {
-                            removeClass(link,"current");
-                        } else {
-                            addClass(link, "current");
-                        }
-                    }
-                }
-            }
-        }
-        //$(document).ready(function () {
-        //    //滚动条发生滚动时，要获取相应的值。
-        //    $(window).scroll(function () {
-        //        var top = $(document).scrollTop();
-        //        var items = $("#content").find(".item");
-        //        var currentId;
-        //        //请补充此处代码，让导航菜单实现在滚动条滚动的时候自动设置焦点
-        //        items.each(function () {
-        //            var _this=$(this);
-        //            var itemTop=_this.offset().top;
-        //            if(top>itemTop-200){
-        //                currentId="#"+_this.attr("id");
-        //            }else{
-        //                return false;
-        //            }
-        //        });
-        //        //给相应楼层的a 设置 current，取消其他链接的current
-        //        var menu=$("#menu");
-        //        var currentLinkA=menu.find(".current");
-        //        if (currentId && currentLinkA.attr("href") != currentId) {
-        //            currentLinkA.removeClass("current");
-        //            menu.find("[href="+currentId+"]").addClass("current");
-        //        }
-        //        //console.log(top);
-        //    });
-        //});
-
-
-    </script>
+    <meta charset="UTF-8">
+    <title>Document</title>
 </head>
 <body>
-    <div id="menu">
-        <ul>
-            <!--运用锚点，实现导航定位。-->
-
-
-            <li><a href="#item1" class="current">1F 男装</a></li>
-            <li><a href="#item2">2F 女装</a></li>
-            <li><a href="#item3">3F 美妆</a></li>
-            <li><a href="#item4">4F 数码</a></li>
-            <li><a href="#item5">5F 母婴</a></li>
-        </ul>
-    </div>
-    <div id="content">
-        <h1>地狗购物网</h1>
-
-        <div id="item1" class="item">
-            <h2>1F 男装</h2>
-            <ul>
-                <li><a href="#"><img src="http://img.mukewang.com/53660fce0001111903990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/53660fce0001111903990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/53660fce0001111903990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/53660fce0001111903990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/53660fce0001111903990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/53660fce0001111903990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/53660fce0001111903990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/53660fce0001111903990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/53660fce0001111903990422.jpg" alt="" /></a></li>
-            </ul>
-        </div>
-        <div id="item2" class="item">
-            <h2>2F 女装</h2>
-            <ul>
-                <li><a href="#"><img src="http://img.mukewang.com/5366104c0001e5c403990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/5366104c0001e5c403990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/5366104c0001e5c403990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/5366104c0001e5c403990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/5366104c0001e5c403990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/5366104c0001e5c403990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/5366104c0001e5c403990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/5366104c0001e5c403990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/5366104c0001e5c403990422.jpg" alt="" /></a></li>
-            </ul>
-        </div>
-        <div id="item3" class="item">
-            <h2>3F 美妆</h2>
-            <ul>
-                <li><a href="#"><img src="http://img.mukewang.com/536610820001cf5b03990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610820001cf5b03990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610820001cf5b03990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610820001cf5b03990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610820001cf5b03990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610820001cf5b03990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610820001cf5b03990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610820001cf5b03990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610820001cf5b03990422.jpg" alt="" /></a></li>
-            </ul>
-        </div>
-        <div id="item4" class="item">
-            <h2>4F 数码</h2>
-            <ul>
-                <li><a href="#"><img src="http://img.mukewang.com/536610ac00012df703990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610ac00012df703990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610ac00012df703990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610ac00012df703990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610ac00012df703990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610ac00012df703990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610ac00012df703990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610ac00012df703990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610ac00012df703990422.jpg" alt="" /></a></li>
-            </ul>
-        </div>
-        <div id="item5" class="item">
-            <h2>5F 母婴</h2>
-            <ul>
-                <li><a href="#"><img src="http://img.mukewang.com/536610cd0001f34603990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610cd0001f34603990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610cd0001f34603990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610cd0001f34603990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610cd0001f34603990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610cd0001f34603990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610cd0001f34603990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610cd0001f34603990422.jpg" alt="" /></a></li>
-                <li><a href="#"><img src="http://img.mukewang.com/536610cd0001f34603990422.jpg" alt="" /></a></li>
-            </ul>
-        </div>
-    </div>
+    <ul id="list">
+        <li class="on">1</li>
+        <li class="select">2</li>
+        <li class="on">3</li>
+        <li>4</li>
+    </ul>
+    <p class="on">class为on的p标签</p>
 </body>
 </html>
+<script type="text/javascript">
+    window.onload=function(){
+        var len1= getByClass('on','list');
+        alert(len1.length);  // 结果等于2为正确
+        var len2= getByClass('on');
+        alert(len1.length);  // 结果等于3为正确
+    }
+    function getByClass(clsName, parent) {
+        //定义函数getByClass()实现获取document或指定父元素下所有class为on的元素pa
+        var arr = [];
+        if (parent) {
+            var oParent = document.getElementById(parent);
+            var nodes = oParent.getElementsByTagName('*');
+            for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].className == clsName) {
+                    arr.push(nodes[i]);
+                }
+            }
+            return arr;
+        } else {
+            var nodes2 = document.getElementsByTagName('*');
+            for (var i = 0; i < nodes2.length; i++) {
+                if (nodes2[i].className == clsName) {
+                    arr.push(nodes2[i]);
+                }
+            }
+            return arr;
+        }
+       
+    }
+</script>
