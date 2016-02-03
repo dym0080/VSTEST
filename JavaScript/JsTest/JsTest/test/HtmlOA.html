@@ -1,177 +1,54 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title>网页定位导航效果扩展案例</title>
-    <style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>导航菜单</title>
+    <style type="text/css">
         * {
             margin: 0;
             padding: 0;
+            font-size: 14px;
         }
 
-        body {
-            font-size: 12px;
-            line-height: 1.7;
-            background-color: #888;
-        }
-
-        li {
+        ul {
             list-style: none;
         }
 
-        #content {
-            width: 1000px;
-            margin: 0 auto;
-            padding-top: 100px;
-            padding-bottom: 300px;
+        a {
+            color: #333;
+            text-decoration: none;
         }
 
-
-            /*请补充此处代码，让右侧广告正确显示*/
-            #content .item {
-                position: relative;
-                height: 540px; /*图片的实际高度*/
-            }
-
-
-
-
-                #content .item img {
-                    position: absolute;
-                    top: 100px;
-                    left: 40px;
-                }
-
-            #content #item1 {
-                background: url("http://img.mukewang.com/536c9ea800013ae610000540.jpg") no-repeat center top;
-            }
-
-            #content #item2 {
-                background: url("http://img.mukewang.com/536c9ecd0001606d10000540.jpg") no-repeat center top;
-            }
-
-            #content #item3 {
-                background: url("http://img.mukewang.com/536c9f0a0001ccc310000540.jpg") no-repeat center top;
-            }
-
-            #content #item4 {
-                background: url("http://img.mukewang.com/536c9f6700012e9010000540.jpg") no-repeat center top;
-            }
-
-            #content #item5 {
-                background: url("http://img.mukewang.com/536c9f800001b28510000540.jpg") no-repeat center top;
-            }
-
-
-        /*请补充此处代码，让导航菜单在左侧绝对定位显示*/
-        #menu {
-            position: fixed;
-            top: 100px;
-            left: 50%;
-            margin-left: -700px;
+        .nav li {
+            float: left;
         }
 
-
-            #menu h1 {
-                color: #fff;
-                font-size: 14px;
-                text-align: center;
-                background: #ee1111;
-                line-height: 30px;
-            }
-
-            #menu ul li a {
+            .nav li a {
                 display: block;
-                margin: 5px 0;
-                font-size: 12px;
-                color: #ccc;
-                width: 160px;
-                padding: 10px 20px;
-                text-decoration: none;
-                text-align: left;
-                border-bottom: 1px dashed #999;
+                text-indent: 20px;
+                height: 30px;
+                line-height: 30px;
+                width: 100px;
+                background-color: #efefef;
+                margin-bottom: 1px;
             }
 
-                #menu ul li a strong {
-                    color: #f1f1f1;
-                }
-
-                #menu ul li a:hover,
-                #menu ul li a.current {
+                .nav li a:hover {
+                    background-color: #F60;
                     color: #fff;
-                    background: #666;
                 }
-
-        /*ie6 hack*/
-        * html, * html body {
-            background-image: url(about:blank);
-            background-attachment: fixed;
-        }
-
-        * html #menu {
-            /*position: fixed;*/
-            position: absolute;
-            top: expression(((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+100+'px');
-        }
     </style>
-    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.js"></script>
-    <script>
-        $(document).ready(function () {
-            $(window).scroll(function () {
-                var top = $(document).scrollTop();
-                var menu = $("#menu");
-                var items = $("#content").find(".item");
 
-                // 请补充此处代码，让导航菜单实现在滚动条滚动的时候自动设置焦点
-                var currentId = "";
-                items.each(function () {
-                    var _this = $(this);
-                    var itemTop = _this.offset().top;
-                    if (top > itemTop - 200) {
-                        currentId = "#" + _this.attr("id");
-                    } else {
-                        return false;
-                    }
-                });
-                var link = menu.find(".current");
-                if (currentId && link.attr("href") != currentId) {
-                    link.removeClass("current");
-                    menu.find("[href=" + currentId + "]").addClass("current");
-                }
-
-            });
-
-        });
-    </script>
 </head>
 <body>
-    <div id="menu">
-        <h1>正在首发</h1>
-        <ul>
-            <li><a href="#item1" class="current"><strong>2014.04.09</strong><br />施华蔻0元赢Smart</a></li>
-            <li><a href="#item2"><strong>2014.04.05</strong><br />alienware机皇限量抢</a></li>
-            <li><a href="#item3"><strong>2014.04.04</strong><br />联想Miix2 3G平板电脑</a></li>
-            <li><a href="#item4"><strong>2014.04.03</strong><br />御爵厨房垃圾处理器</a></li>
-            <li><a href="#item5"><strong>2014.04.01</strong><br />中兴天机GRAND S II</a></li>
-        </ul>
-    </div>
-    <div id="content">
 
-        <div id="item1" class="item">
-            <img src="http://img.mukewang.com/536ca02800014e7105000400.jpg" />
-        </div>
-        <div id="item2" class="item">
-            <img src="http://img.mukewang.com/536ca04b0001dbeb04520519.jpg" />
-        </div>
-        <div id="item3" class="item">
-            <img src="http://img.mukewang.com/536ca06200016a4d03950387.jpg" />
-        </div>
-        <div id="item4" class="item">
-            <img src="http://img.mukewang.com/536ca0ab0001c89205000400.jpg" />
-        </div>
-        <div id="item5" class="item">
-            <img src="http://img.mukewang.com/536ca0830001b17f05000400.jpg" />
-        </div>
-    </div>
+    <ul class="nav">
+        <li><a href="#">首　　页</a></li>
+        <li><a href="#">新闻快讯</a></li>
+        <li><a href="#">产品展示</a></li>
+        <li><a href="#">售后服务</a></li>
+        <li><a href="#">联系我们</a></li>
+    </ul>
+
 </body>
 </html>
