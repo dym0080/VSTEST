@@ -5,29 +5,30 @@
     <title>导航菜单</title>
     <script src="../Scripts/jquery-1.10.2.js"></script>
     <style type="text/css">
-        div#expander {
-            width: 100px;
-            height: 100px;
-            background-color: blue;
-        }
+       
     </style>
     <script type="text/javascript">
-        (function () {
-            function foo1() {
-                return {
-                    bar: "hello"
-                };
-            }
+        var myFunction = function () {
+            console.log('hello');
+        };
 
-            function foo2() {
-                return
-                {
-                    bar: "hello"
-                };
-            }
-            foo1();
-            foo2();
-        })();
+        var myObject = {
+            foo: 'bar'
+        };
+
+        var myArray = ['a', 'b', 'c'];
+
+        var myString = 'hello';
+
+        var myNumber = 3;
+
+        typeof myFunction;   // 返回 'function'
+        typeof myObject;     // 返回 'object'
+        typeof myArray;      // returns 'object' -- careful!
+        typeof myString;     // 返回 'string';
+        typeof myNumber;     // 返回 'number'
+
+        typeof null;         // returns 'object' -- careful!
         
     </script>
 </head>
