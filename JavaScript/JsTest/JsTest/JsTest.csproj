@@ -1711,6 +1711,7 @@
     <Content Include="test\eventUitity.js" />
     <Content Include="test\Script.js" />
     <Content Include="test\Style.css" />
+    <Content Include="test\testjs.js" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
