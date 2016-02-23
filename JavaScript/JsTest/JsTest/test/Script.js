@@ -76,6 +76,7 @@ function fnDown(event) {
     var disX = event.clientX - loginPanel.offsetLeft;
     var disY = event.clientY - loginPanel.offsetTop;
     document.onmousemove = function (event) {
+
         event = event || window.event;
         fnMove(event, disX, disY);
     }

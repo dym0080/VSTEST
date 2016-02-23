@@ -4,24 +4,47 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>导航菜单</title>
     <style type="text/css">
-        .aa{
-            width: 500px;
-            height:400px;
-            
-            background-color: #808080;
-            left: 50%;
-            top:50%;
-            position:relative;
-        }
+        
     </style>
     <script src="../Scripts/jquery-1.10.2.js"></script>
-    <script type="text/javascript">
-
-      
-    </script>
+    
 
 </head>
 <body>
-    <div class="aa">2222222222222222222222222222222222</div>
+    <ul></ul>
 </body>
 </html>
+<script type="text/javascript">
+
+    // a list with well-known web browsers
+
+   
+    //不建议的做法
+    var browserList = ["Internet Explorer", "Mozilla Firefox", "Safari", "Chrome", "Opera"];
+    $.each(browserList, function (index,value) {
+        $('<li>').text(value).appendTo($('ul').eq(0));
+    })
+
+    //好的作法no1
+    var browserList = ["Internet Explorer", "Mozilla Firefox", "Safari", "Chrome", "Opera"];
+    var myHTML = '';
+    $.each(browserList, function (index, value) {
+        myHTML += '<li>' + value + '</li>';
+    })
+    $('ul').eq(0).html(myHTML);
+
+    //好的作法no2
+    var frag = document.createDocumentFragment();
+    var browserList = ["Internet Explorer", "Mozilla Firefox", "Safari", "Chrome", "Opera"];
+    $.each(browserList, function (index, value) {
+        var li = document.createElement("li");
+        li.textContent = value;
+        frag.appendChild(li);
+    })
+    $('ul').eq(0).append($(frag));
+
+
+    
+
+</script>
+
