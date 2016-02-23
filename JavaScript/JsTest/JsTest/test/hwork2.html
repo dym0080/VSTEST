@@ -1,30 +1,70 @@
-﻿<!doctype html>
-<html lang="en">
+﻿<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <script src="../Scripts/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("div").each(function (index, domEle) {
-                console.log(domEle);
-            });
-        })
-        
-    </script>
+    <title>bing search</title>
+    <style type="text/css">
+        body {
+            background-color: #333;
+        }
+
+        .bg-div {
+            text-align: center;
+            position:relative;
+            margin: 0 auto;
+            height: 690px;
+            width: 1228px;
+            background-image: url(http://img.mukewang.com/52da5e7d0001c0f813660768.jpg);
+        }
+
+        .logo {
+            float: left;
+            background: url(http://img.mukewang.com/52da5e530001eea901070053.jpg) no-repeat;
+            margin: -4px 18px 0 0;
+            height: 53px;
+            width: 107px;
+        }
+
+        .search-warp {
+            float: left;
+            background-color: #fff;
+            width: 407px;
+            padding: 5px;
+        }
+
+        .search-input {
+            float: left;
+            border: 0;
+            font-size: 100%;
+            width: 375px;
+            outline: none; /**/
+            height: 29px;
+            line-height:29px;
+        }
+
+        .search-submit {
+            float: left;
+            height: 29px;
+            width: 29px;
+            background: transparent url(http://img.mukewang.com/52da5df800012b1e02220137.jpg) no-repeat -30px -107px;
+            border: 0;
+            cursor:pointer;
+        }
+
+        .search-box {
+            top: 20%;
+            left: 8%;
+            position:absolute;
+        }
+    </style>
 </head>
 <body>
-    <button>Change colors</button>
-    <span></span>
-    <div></div>
-    <div></div>
-
-    <div></div>
-    <div></div>
-    <div id="stop">Stop here</div>
-    <div></div>
-
-    <div></div>
-    <div></div>
+    <div class="bg-div">
+        <div class="search-box">
+            <div class="logo"></div>
+            <form action="https://www.bing.com/search" target="_blank" method="get" class="search-warp">
+                <input class="search-input" type="text" name="q">
+                <input class="search-submit" type="submit" value="" />
+            </form>
+        </div>
+    </div>
 </body>
 </html>
