@@ -2,21 +2,30 @@
 <html>
 <head>
     <title></title>
-    <script type="text/javascript">
-        function resCalc() {
-            numA = document.getElementById("num_a").value;
-            numB = document.getElementById("num_b").value;
-            document.getElementById("result").value = Number(numA) + Number(numB);
-        }
-    </script>
+    
 </head>
 <body>
-    <p>使用 output 元素的简易计算器：</p>
-    <form onsubmit="return false">
-        <input id="num_a" /> +
-        <input id="num_b" /> =
-        <output id="result" onforminput="resCalc()"></output>
-    </form>
+    <div id="parentElement">
+        <span id="aaa">ss</span>
+        <span id="childElement">foo bar</span>
+    </div>
 
+   
 </body>
 </html>
+<script type="text/javascript">
+    (function () {
+        // Create a new, plain <span> element
+        var sp1 = document.getElementById("aa");
+
+        // Get a reference to the element, before we want to insert the element
+        var sp2 = document.getElementById("childElement");
+        // Get a reference to the parent element
+        var parentDiv = sp2.parentNode;
+
+        // Insert the new element into the DOM before sp2
+        parentDiv.insertBefore(sp1, sp2);
+    })();
+
+</script>
+

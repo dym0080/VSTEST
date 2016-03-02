@@ -2,49 +2,40 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>导航菜单</title>
+    <title></title>
     <style type="text/css">
+        body{margin:0;padding:0;}
         
     </style>
-    <script src="../Scripts/jquery-1.10.2.js"></script>
-    
-
 </head>
 <body>
-    <ul></ul>
+    <div id="target"></div>
+    <input type="button" id="button1" value="1" />
+    <input type="button" id="button2" value="2" />
 </body>
 </html>
 <script type="text/javascript">
+    (function () {
+        var btn1 = document.getElementById('button1');
+        var btn2 = document.getElementById('button2');
+        
+        addListener(btn1, 'click', function () {
+            btn1.parentNode.insertBefore(btn2, btn1);
+        })
 
-    // a list with well-known web browsers
-
-   
-    //不建议的做法
-    var browserList = ["Internet Explorer", "Mozilla Firefox", "Safari", "Chrome", "Opera"];
-    $.each(browserList, function (index,value) {
-        $('<li>').text(value).appendTo($('ul').eq(0));
-    })
-
-    //好的作法no1
-    var browserList = ["Internet Explorer", "Mozilla Firefox", "Safari", "Chrome", "Opera"];
-    var myHTML = '';
-    $.each(browserList, function (index, value) {
-        myHTML += '<li>' + value + '</li>';
-    })
-    $('ul').eq(0).html(myHTML);
-
-    //好的作法no2
-    var frag = document.createDocumentFragment();
-    var browserList = ["Internet Explorer", "Mozilla Firefox", "Safari", "Chrome", "Opera"];
-    $.each(browserList, function (index, value) {
-        var li = document.createElement("li");
-        li.textContent = value;
-        frag.appendChild(li);
-    })
-    $('ul').eq(0).append($(frag));
-
-
-    
-
+        function addListener(elem, type, handler) {
+            if (elem.addEventListener) {
+                elem.addEventListener(type, handler, false);
+            } else if (elem.attachEvent) {
+                elem.attachEvent('on' + type, handler);
+            } else {
+                elem['on' + type] = handler;
+            }
+        }
+    })();
 </script>
+
+
+
+
 
