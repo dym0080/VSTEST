@@ -80,7 +80,7 @@ function getScrollOffset(w) {
         };
     }
 
-    // 老版本IE，根据兼容性不同访问不同元素
+    // IE 8及以下浏览器在标准模式下，根据兼容性不同访问不同元素
     var d = w.document;
     if (d.compatMode === 'CSS1Compat') {
         return {
@@ -88,7 +88,7 @@ function getScrollOffset(w) {
             y: d.documentElement.scrollTop
         }
     }
-
+    // IE8及以下浏览器在怪癖模式下
     return {
         x: d.body.scrollLeft,
         y: d.body.scrollTop
