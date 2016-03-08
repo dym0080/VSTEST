@@ -37,10 +37,10 @@ var eventUitity = {
     getElement: function (event) {
         return event.target || event.srcElement;
     },
-    preventDefalut: function (event) {
-        if (event.preventDefalut) {
+    preventDefault: function (event) {
+        if (event.preventDefault) {
             //非IE阻止事件默认行为
-            event.preventDefalut();
+            event.preventDefault();
         } else {
             //IE阻止事件默认行为
             event.returnValue = false;
