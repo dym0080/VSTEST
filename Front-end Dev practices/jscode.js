@@ -45,8 +45,7 @@ function fnCoventArray(arr) {
 	 * 请先构造此数组a,然后设计一个算法将其内容去重 
 	 * by myself
 	 * /
-	
-	function fnArray() {
+        function fnArray() {
 		var arr = [];
 		for (var i = 0; i < 100; i++) {
 			var random = Math.floor(Math.random() * 100 + 1);
@@ -55,14 +54,14 @@ function fnCoventArray(arr) {
 		return arr;
 	}
 
-	function fnRemoveRepeat (arr) {
-		if(arr&&Array.isArray(arr)){
-			var obj={};
+	function fnRemoveRepeat(arr) {
+		if (arr && Array.isArray(arr)) {
+			var obj = {};
 			for (var i = 0; i < arr.length; i++) {
-				if(arr[i] in obj){
-					arr.splice(i,1);
-				}else{
-					obj[arr[i]]=true;
+				if (arr[i] in obj) {
+					arr.splice(i, 1);
+				} else {
+					obj[arr[i]] = true;
 				}
 			}
 		}
