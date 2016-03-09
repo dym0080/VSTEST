@@ -1,4 +1,5 @@
-﻿*{
+﻿@charset "gb2312";
+*{
     padding:0;
     margin:0;
     font-size:12px;
@@ -9,7 +10,7 @@ body {
 
 .top{
  width:100%;
- background:url(../images/top_bg.jpg) repeat-x;
+ background:url(../test/images/top_bg.jpg) repeat-x;
  height:27px;
 }
 .wrap{
@@ -23,7 +24,7 @@ body {
 }
 .top_content li{
     float:right;
-    list-style-image: url(../images/arrow.jpg);
+    list-style-image: url(../test/images/arrow.jpg);
     width:70px;
 }
 .top_content a:hover,.top_content a:active{
@@ -39,10 +40,153 @@ body {
     background:#fff;
 }
 .logo_left{
-    float:left;
+    /*float:left;*/ /*若启用此样式则nav_left会单独占一行，原因还未知*/
     display:inline;
+    width:375px;
 }
 .logo_right{
     float:right;
     display:inline;
+    margin-top:30px;
+    height:28px;
+    color:#8E8E8E;
+}
+.logo_right img{
+    vertical-align:middle;
+    margin-right:10px;
+}
+.tel{
+    font-family:"微软雅黑";
+    font-size:20px;
+    color:#C00;
+}
+
+.nav {
+	height: 40px;
+}
+.nav_left {
+	width: 10px;
+	background: url(../test/images/nav_left.jpg) no-repeat;
+}
+.nav_mid {
+	width: 980px;
+	background: url(../test/images/nav_bg.jpg) repeat-x;
+	line-height: 40px;
+}
+.nav_right {
+	width: 10px;
+	background: url(../test/images/nav_right.jpg) no-repeat;
+}
+.nav_left, .nav_mid, .nav_right {
+	height: 40px;
+	float: left;
+	display: inline;
+}
+.nav_mid li {
+	float: left;
+	list-style-type: none;
+	width: 100px;
+	font-family: "微软雅黑";
+	text-align: center;
+}
+.nav_mid a:link, .nav_mid a:visited {
+	font-size: 16px;
+	color: #FFF;
+	text-decoration: none;
+}
+.nav_mid a:hover, .nav_mid a:active {
+	font-size: 16px;
+	color: #FF0;
+	text-decoration: none;
+}
+.nav_mid_left {
+	width: 680px;
+}
+.nav_mid_right {
+	width: 300px;
+}
+.nav_mid_left, .nav_mid_right {
+	float: left;
+	display: inline;
+}
+.search_text{
+    width:190px;
+    float:left;
+    height:25px;
+    margin-top:5px;
+    background:url(../test/images/search.jpg) no-repeat right center;
+    background-color:#FFF;
+    border:1px solid #FFF;
+    padding-right:25px;
+}
+.ad{
+    width:1000px;
+    height:310px;
+    overflow:hidden;
+    margin-top:5px;
+}
+.main{
+    margin-top:5px;
+    width:1000px;
+    height:250px;
+    background-color:#FFF;
+}
+.news{
+    width:340px;
+    border:1px solid #E8E8E8;
+    /*background-color:#FF0;*/
+}
+.course{
+    width:410px;
+    margin:0 7px;
+    border:1px solid #E8E8E8;
+    /*background-color:#a05f5f;*/
+}
+.sidebar{
+    width:230px;
+}
+.news,.course,.sidebar{
+    height:250px;
+    float:left;
+}
+.title{
+    height:35px;
+    border:2px solid #E8E8E8;
+    font-family:"微软雅黑";
+    font-weight:bold;
+    color: #786F66;
+    line-height:35px;
+    font-size:14px;
+}
+.title_left{
+    width:70%;
+    float:left;
+    padding-left:20px;
+}
+.title_right{
+    width:20%;
+    float:right;
+    text-align:right;
+}
+.title_right a{
+    text-decoration:none;
+    color:#999;
+    padding-right:10px;
+    font-size:10px;
+    font-weight:normal;
+    font-family:"宋体";
+}
+
+.pic_news{
+    height:80px;
+    margin-top:10px;
+    line-height:22px;
+}
+.pic_news img{
+    margin:0 5px;
+    float:left;
+}
+.pic_news a{
+    text-decoration:none;
+    color:#C00;
 }

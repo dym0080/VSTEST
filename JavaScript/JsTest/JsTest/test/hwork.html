@@ -4,11 +4,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>首页</title>
     <link href="main.css" rel="stylesheet" />
+    <script src="../Scripts/myFocus/myfocus-2.0.1.min.js"></script>
+    <script src="../Scripts/myFocus/mf-pattern/mF_fancy.js"></script>
+    <link href="../Scripts/myFocus/mf-pattern/mF_fancy.css" rel="stylesheet" />
     <script src="Script.js"></script>
+
+    <script type="text/javascript">
+        myFocus.set({
+            id:'picBox'
+        });
+    </script>
   
 </head>
 <body>
-    <!--start top-->
     <div class="top">
         <div class="top_content">
             <ul>
@@ -21,12 +29,77 @@
     <!--end top-->
 
     <div class="wrap">
-        <!--start logo-->
         <div class="logo">
             <div class="logo_left"><img src="images/logo.jpg"/></div>
             <div class="logo_right"><img  src="images/tel.jpg" width="28" height="28"/>24小时服务热线：<span class="tel">123-456-7890</span></div>
         </div>
         <!--end logo-->
+
+        <div class="nav">
+            <div class="nav_left"></div>
+            <div class="nav_mid">
+                <div class="nav_mid_left">
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="list.html">关于慕课</a></li>
+                        <li><a href="list.html">新闻动态</a></li>
+                        <li><a href="list.html">课程中心</a></li>
+                        <li><a href="list.html">在线课程</a></li>
+                        <li><a href="list.html">人才招聘</a></li>
+                    </ul>
+                </div>
+                <div class="nav_mid_right">
+                    <form action=""  method="post">
+                        <input  type="text" class="search_text"/>
+                    </form>
+                </div>
+            </div>
+            <div class="nav_right"></div>
+        </div>
+        <!--end nav-->
+
+        <div class="ad" id="picBox">
+            <div class="loading"><img src="../test/images/loading.gif" alt="图片加载中..."/></div>
+            <div class="pic">
+                <ul>
+                    <li><img src="../test/images/ad2.jpg"/></li>
+                    <li><img src="../test/images/ad3.jpg" /></li>
+                    <li><img src="../test/images/ad4.jpg" /></li>
+                </ul>
+            </div>
+        </div>
+        <!--end ad-->
+
+        <div class="main">
+            <div class="news">
+                <div class="title">
+                    <h2 class="title_left">新闻中心</h2>
+                    <span class="title_right"><a href="#">More&gt;&gt;</a></span>
+                </div>
+                <div class="pic_news">
+                    <img src="images/news.jpg" alt="520 慕女神喊你来表白" width="113" height="77" />
+                    <h2><a href="news.html">520 慕女神喊你来表白！</a></h2>
+                    <p>
+                        活动时间：5月20日—5月25日<br />
+                        获奖公布时间：5月26日<br />
+                        <a href="news.html">Learn More&gt;&gt;</a>
+                    </p>
+                </div>
+                <div class="news_list">
+                    <ul>
+                        <li><span>2014-06-01</span> <a href="news.html">【慕客访谈 用户篇】“有为屌丝”在路上</a></li>
+                        <li><span>2014-06-01</span><a href="news.html">【有奖活动】给父亲的三行书信</a></li>
+                        <li><span>2014-05-30</span><a href="news.html">《程序猿，请晒出你的童年》活动获奖公告</a></li>
+                        <li><span>2014-05-28</span><a href="news.html" title="aa">【慕课访谈】破茧成蝶——美女程序员的蜕变史</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--end news-->
+            <div class="course"></div><!--end course-->
+            <div class="sidebar"></div><!--end sidebar-->
+        </div>
+        <!--end main-->
+
     </div>
 </body>
 </html>

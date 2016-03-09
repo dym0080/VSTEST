@@ -1617,6 +1617,9 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\myFocus\mf-pattern\mF_fancy.css" />
+    <Content Include="Scripts\myFocus\mf-pattern\mF_fancy.js" />
+    <Content Include="Scripts\myFocus\myfocus-2.0.1.min.js" />
     <Content Include="Scripts\react-0.14.3\build\react-dom-server.js" />
     <Content Include="Scripts\react-0.14.3\build\react-dom-server.min.js" />
     <Content Include="Scripts\react-0.14.3\build\react-dom.js" />
@@ -1936,6 +1939,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Book\code\AdvancEDDOMScripting\AdvancEDDOMScripting\chapter1\popup\misc\" />
+    <Folder Include="Scripts\myFocus\mf-pattern\img\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

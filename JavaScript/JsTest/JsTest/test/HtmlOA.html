@@ -1,46 +1,83 @@
-﻿<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>3.10新闻中心制作评测题</title>
+    <style type="text/css">
+        /*在此定义相关CSS样式*/
+        body{
+            font-size:12px;
+        }
+        .topList {
+            width: 300px;
+            height: 180px;
+            border: 1px solid #E8E8E8;
+            margin: 0 auto;
+        }
+
+        .topList li{
+            list-style-type:none;
+            margin: 5px;
+        }
+
+        em {
+            width: 20px;
+            height: 16px;
+            text-align: center;
+            font-style: normal;
+            color: #333;
+            background: url("http://img.mukewang.com/53cf0fa20001d3dc00200032.jpg");
+            background-position: 0px 16px;
+            display: block;
+            float: left;
+        }
+
+        .top em {
+            background: url("http://img.mukewang.com/53cf0fa20001d3dc00200032.jpg");
+            background-position: 16px 0px;
+        }
+
+        
+        a:link, a:visited {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .a:hover, a:active {
+            text-decoration: none;
+            color: #ff0000;
+        }
+    </style>
 </head>
+
 <body>
-    <span id="spn"></span>
+    <div class="topList">
+        <ul>
+            <li class="top">
+                <em>01</em>
+                <p><a href="http://www.imooc.com/">【慕客访谈用户篇】“有为屌丝”在路上</a></p>
+            </li>
+            <li class="top">
+                <em>02</em>
+                <p><a href="http://www.imooc.com/">【有奖活动】给父亲的三行书信</a></p>
+            </li>
+            <li class="top">
+                <em>03</em>
+                <p><a href="http://www.imooc.com/">《程序猿，请晒出你的童年》活动获奖公告</a></p>
+            </li>
+            <li>
+                <em>04</em>
+                <p><a href="http://www.imooc.com/">【慕课访谈】破茧成蝶——美女程序员的蜕变史</a></p>
+            </li>
+            <li>
+                <em>05</em>
+                <p><a href="http://www.imooc.com/">【获奖公告】追“球”巅峰，争当“预言帝”</a></p>
+            </li>
+            <li>
+                <em>06</em>
+                <p><a href="http://www.imooc.com/">【问卷调查】慕课网用户学习情况大调查</a></p>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>
-<script type="text/javascript">
-    //网页中实现一个计算当年还剩多少时间的倒数计时程序,要求网页上实时动态显示"××年还剩××月××天××时××分××秒"
-    (function () {
-        function GetTime() {
-            var curDate = new Date();
-            var endDate = new Date(curDate.getFullYear() + 1, 0, 1);
-            var times = Math.floor((endDate - curDate) / 1000);
-            var seconds = times % 60;
-            var minutes = Math.floor(times / 60) % 60;
-            var hours = Math.floor(times / (60 * 60)) % 24;
-            var days = Math.floor(times / (60 * 60 * 24)) % 30;
-            var months = Math.floor(times / (60 * 60 * 24 * 30)) % 12;
-            //var years = Math.floor(times / (60 * 60 * 24 * 30 * 12));
-            var arr = [seconds, minutes, hours, days, months];
-            for (var i = 0; i < arr.length; i++) {
-                arr[i] = checkTime(arr[i]);
-            }
-            return curDate.getFullYear() + '年还剩' + arr[4] + '月' + arr[3] + '天' + arr[2] + '时' + arr[1] + '分' + arr[0] + '秒';
-        }
-        //补位
-        function checkTime(val) {
-            if (val < 10) {
-                val = '0' + val;
-            }
-            return val;
-        }
-        var spn = document.getElementById('spn');
-        setInterval(function () {
-            spn.innerHTML = GetTime();
-        }, 100);
-    })();
-</script>
-
-
-
-
