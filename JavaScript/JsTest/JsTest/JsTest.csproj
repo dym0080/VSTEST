@@ -1705,6 +1705,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="test\images\newsss.jpg" />
+    <Content Include="test\news.html" />
+    <Content Include="test\list.html" />
     <Content Include="test\hwork2.html" />
     <Content Include="test\Flight.html" />
     <Content Include="test\FormWork.aspx" />

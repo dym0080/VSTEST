@@ -182,11 +182,208 @@ body {
     margin-top:10px;
     line-height:22px;
 }
-.pic_news img{
+.pic_news img,.course_pic img{
     margin:0 5px;
     float:left;
 }
-.pic_news a{
+.pic_news a,.course_pic a{
     text-decoration:none;
     color:#C00;
+}
+.news_list {
+	margin-top: 20px;
+}
+.news_list li {
+	background: url(../test/images/list.jpg) no-repeat;
+	list-style-type: none;
+	padding-left: 10px;
+	margin: 8px;
+	border-bottom: 1px dotted #CCC;
+	height: 17px;
+	line-height: 17px;
+}
+.news_list span {
+	float: right;
+	color: #999;
+}
+.news_list a:link, .news_list a:visited {
+	text-decoration: none;
+	color: #000;
+}
+.news_list a:hover, .news_list a:active {
+	color: #F00;
+	text-decoration: none;
+}
+.course_pic{
+    margin-top:10px;
+    height:100px;
+    line-height:20px;
+}
+.course_type{
+    margin-top:20px;
+    width:372px;
+    height:27px;
+    background:url(../test/images/product_type_bg.jpg) no-repeat;
+}
+.course_type li{
+    float:left;
+    list-style-type:none;
+    line-height:27px;
+    text-align:center;
+    margin:0 15px;
+}
+.sidebar_video{
+    height:185px;
+    margin-bottom: 10px;
+	border: 1px solid #E8E8E8;
+}
+.video_content {
+	height: 150px;
+}
+.sidebar_pic{
+    border:1px solid #E8E8E8;
+}
+.copyright{
+    width:100%;
+    height:200px;
+    margin-top:10px;
+    background:#E8E8E8;
+    clear:both;
+}
+.copyright_content{
+    width:1000px;
+    margin:0 auto;
+    padding-top:20px;
+}
+.copyright_content li{
+    list-style:none;
+    float:left;
+    width:200px;
+    background:url(../test/images/line.png) no-repeat right center;
+    text-align:center;
+    line-height:30px;
+}
+.copyright_content a{
+    text-decoration:none;
+    font-size:18px;
+    color:#999;
+    font-family:"微软雅黑";
+}
+.copyright_content li ul li a{
+    font-size: 14px;
+}
+
+.list_main{
+    height:350px;
+    width:1000px;
+}
+.list_left{
+    height:350px;
+    width:220px;
+    float:left;
+    border:1px solid #E8E8E8;
+}
+.list_right{
+    min-height:350px;
+    _height:350px;
+    width:770px;
+    float:right;
+    border:1px solid #E8E8E8;
+}
+.list_left h2,.list_right h2{
+    font-family:"微软雅黑";
+    font-size:14px;
+    background:url(../test/images/titile_bg.gif) repeat-x;
+    height:35px;
+    line-height:35px;
+    padding-left:20px;
+    color:#666;
+}
+.list_left_content{
+    height:365px;
+    background:url(../test/images/type_bg.png) repeat-x;
+}
+.list_left_content li{
+    list-style-type:none;
+    height:30px;
+    line-height:30px;
+}
+.list_left_content li a{
+    display:block;
+    text-decoration:none;
+    color:#666;
+    background:url(../test/images/li_bg.gif) no-repeat left center;
+    padding-left:15px;
+}
+.list_left_content li a:hover{
+    color:#009CDF;
+    background:url(../test/images/li_bg2.gif) no-repeat left center;
+    background-color:#F2F2F2;
+}
+
+.list_right_content {
+	margin-top: 20px;
+}
+.list_right_content li {
+	background: url(../test/images/list.jpg) no-repeat;
+	list-style-type: none;
+	padding-left: 10px;
+	margin: 8px;
+	border-bottom: 1px dotted #CCC;
+	height: 17px;
+	line-height: 17px;
+}
+.list_right_content a:link, .list_right_content a:visited {
+	text-decoration: none;
+	color: #000;
+}
+.list_right_content a:hover, .list_right_content a:active {
+	color: #F00;
+	text-decoration: none;
+}
+.page {
+	height: 40px;
+	margin-top: 10px;
+	text-align: center;
+}
+.page a {
+	display: inline-block;
+	border: 1px solid #E8E8E8;
+	text-decoration: none;
+	margin: 5px;
+	padding: 5px 10px;
+}
+.page a:link, .page a:visited {
+	color: #000;
+}
+.page a:hover, .page a:active {
+	color: #FFF;
+	background-color: #cc1b1b;
+}
+.active {
+	background-color: #cc1b1b;
+	color: #FFF;
+}
+.newsBox {
+	width: 770px;
+	min-height: 300px;
+	_height: 300px;
+	margin:0 auto;
+}
+.newsTitle {
+	font-size: 20px;
+	font-family: "微软雅黑";
+	text-align: center;
+	margin: 10px 0;
+}
+.newsInfo {
+	color: #666;
+	text-align: center;
+	border-bottom: 1px dotted #666;
+}
+.newsContent {
+	font-size: 14px;
+	line-height: 25px;
+	padding: 20px;
+	text-indent: 2em;
 }
