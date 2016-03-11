@@ -10,7 +10,7 @@ body {
 
 .top{
  width:100%;
- background:url(../test/images/top_bg.jpg) repeat-x;
+ background:url(images/top_bg.jpg) repeat-x;
  height:27px;
 }
 .wrap{
@@ -24,7 +24,7 @@ body {
 }
 .top_content li{
     float:right;
-    list-style-image: url(../test/images/arrow.jpg);
+    list-style-image: url(images/arrow.jpg);
     width:70px;
 }
 .top_content a:hover,.top_content a:active{
@@ -66,16 +66,16 @@ body {
 }
 .nav_left {
 	width: 10px;
-	background: url(../test/images/nav_left.jpg) no-repeat;
+	background: url(images/nav_left.jpg) no-repeat;
 }
 .nav_mid {
 	width: 980px;
-	background: url(../test/images/nav_bg.jpg) repeat-x;
+	background: url(images/nav_bg.jpg) repeat-x;
 	line-height: 40px;
 }
 .nav_right {
 	width: 10px;
-	background: url(../test/images/nav_right.jpg) no-repeat;
+	background: url(images/nav_right.jpg) no-repeat;
 }
 .nav_left, .nav_mid, .nav_right {
 	height: 40px;
@@ -114,7 +114,7 @@ body {
     float:left;
     height:25px;
     margin-top:5px;
-    background:url(../test/images/search.jpg) no-repeat right center;
+    background:url(images/search.jpg) no-repeat right center;
     background-color:#FFF;
     border:1px solid #FFF;
     padding-right:25px;
@@ -194,7 +194,7 @@ body {
 	margin-top: 20px;
 }
 .news_list li {
-	background: url(../test/images/list.jpg) no-repeat;
+	background: url(images/list.jpg) no-repeat;
 	list-style-type: none;
 	padding-left: 10px;
 	margin: 8px;
@@ -223,7 +223,7 @@ body {
     margin-top:20px;
     width:372px;
     height:27px;
-    background:url(../test/images/product_type_bg.jpg) no-repeat;
+    background:url(images/product_type_bg.jpg) no-repeat;
 }
 .course_type li{
     float:left;
@@ -259,7 +259,7 @@ body {
     list-style:none;
     float:left;
     width:200px;
-    background:url(../test/images/line.png) no-repeat right center;
+    background:url(images/line.png) no-repeat right center;
     text-align:center;
     line-height:30px;
 }
@@ -293,7 +293,7 @@ body {
 .list_left h2,.list_right h2{
     font-family:"微软雅黑";
     font-size:14px;
-    background:url(../test/images/titile_bg.gif) repeat-x;
+    background:url(images/titile_bg.gif) repeat-x;
     height:35px;
     line-height:35px;
     padding-left:20px;
@@ -301,7 +301,7 @@ body {
 }
 .list_left_content{
     height:365px;
-    background:url(../test/images/type_bg.png) repeat-x;
+    background:url(images/type_bg.png) repeat-x;
 }
 .list_left_content li{
     list-style-type:none;
@@ -312,12 +312,12 @@ body {
     display:block;
     text-decoration:none;
     color:#666;
-    background:url(../test/images/li_bg.gif) no-repeat left center;
+    background:url(images/li_bg.gif) no-repeat left center;
     padding-left:15px;
 }
 .list_left_content li a:hover{
     color:#009CDF;
-    background:url(../test/images/li_bg2.gif) no-repeat left center;
+    background:url(images/li_bg2.gif) no-repeat left center;
     background-color:#F2F2F2;
 }
 
@@ -325,7 +325,7 @@ body {
 	margin-top: 20px;
 }
 .list_right_content li {
-	background: url(../test/images/list.jpg) no-repeat;
+	background: url(images/list.jpg) no-repeat;
 	list-style-type: none;
 	padding-left: 10px;
 	margin: 8px;
