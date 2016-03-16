@@ -1,4 +1,27 @@
 /*************************************************************************************************************************/
+        //20160316
+	/**
+	 * 10--100之间的10个数字，存入一个数组，并排序
+	 */
+	function fnArr() {
+		var newArr = [];
+		for (var i = 0; i < 10; i++) {
+			var num = Math.floor(Math.random() * 91 + 10);
+			newArr.push(num);
+		}
+		newArr.sort();
+		return newArr;
+	}
+	// 返回一个介于min和max之间的随机数
+	function getRandomArbitrary(min, max) {
+		return Math.random() * (max - min) + min;
+	}
+	// 返回一个介于min和max之间的整型随机数
+	// Using Math.round() will give you a non-uniform distribution!
+	function getRandomInt(min, max) {
+		return Math.floor(Math.random() * (max - min + 1) + min);
+	}
+/*************************************************************************************************************************/
 /**
  * 完成一个函数,接受数组作为参数,数组元素为整数或者数组,数组元素包含整数或数组,函数返回扁平化后的数组
  * 如：[1, [2, [ [3, 4], 5], 6]] => [1, 2, 3, 4, 5, 6]
