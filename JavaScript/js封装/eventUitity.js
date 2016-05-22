@@ -46,10 +46,10 @@ var eventUitity = {
             event.returnValue = false;
         }
     },
-    stopProgagation: function (event) {
-        if (event.stopProgagation) {
+    stopPropagation: function (event) {
+        if (event.stopPropagation) {
             //非IE阻止事件冒泡
-            event.stopProgagation();
+            event.stopPropagation();
         } else {
             //IE阻止事件冒泡
             event.cancelBubble = true;
