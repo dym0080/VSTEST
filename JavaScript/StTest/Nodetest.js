@@ -1,4 +1,3 @@
-(function() {
+document.getElementsByTagName('')
 
-
-})();
+document.get
