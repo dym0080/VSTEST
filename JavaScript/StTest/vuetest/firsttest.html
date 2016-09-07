@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+</head>
+<body>
+<div id="app1">
+	<my-component></my-component>
+</div>
+<div id="app2">
+	<my-component></my-component>
+</div>
+<div id="app3">
+	<my-component></my-component>
+</div>
+</body>
+<script src="js/vue.js"></script>
+	<script type="text/javascript">
+		// var myComponent=Vue.extend({
+		// 	template:'<div>jdzm test</div>'
+		// })
+		Vue.component('my-component',{
+			template:'<div>jdzm test2</div>'
+		})
+		new Vue({
+			el:'#app1'
+		});
+		new Vue({
+			el:'#app2'
+		});
+	</script>
+</html>
