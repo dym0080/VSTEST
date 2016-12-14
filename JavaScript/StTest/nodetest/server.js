@@ -13,7 +13,7 @@ function start(route,handle) {
   	var pathname=url.parse(request.url).pathname;
     console.log("Request for "+pathname+" resceived");
 
- 	  //route(handle,pathname);
+    //route(handle,pathname);
 
     response.writeHead(200, {"Content-Type": "text/plain"});
     var content =route(handle,pathname);
@@ -29,7 +29,7 @@ function start(route,handle) {
 exports.start = start;
 
 // var http = require("http");
-
+//
 // http.createServer(function(request, response) {
 //   console.log("Request received.");
 //   response.writeHead(200, {"Content-Type": "text/plain"});
