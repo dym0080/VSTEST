@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QQ地图</title>
+    <link rel="stylesheet" href="../ol.css">
+    <script src="../ol.js"></script>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+<div id="map" style="width: 100%;height: 500px"></div>
+<div id="people" onclick="fnAAA()">
+    <img src="../images/baidu_pt_mark.png" height="43" width="32"/>
+</div>
+<div id="divAAA">AAAAAAAAAAAA</div>
+<div id="info">affffafa</div>
+<script type="text/javascript">
+
+    var resolutions = [];
+
+    var projection = new ol.proj.get("EPSG:3857");
+    var projectionExtent = projection.getExtent();
+
+
+    var mapWidth3857 = ol.extent.getWidth(projectionExtent);
+    for (var i = 0; i < 18; i++) {
+        resolutions[i] = mapWidth3857 / (256 * Math.pow(2, i));
+    }
+
+    var tilegrid = new ol.tilegrid.TileGrid({
+        origin: ol.extent.getBottomLeft(projectionExtent),
+        resolutions: resolutions,
+        extent: projectionExtent,
+        tileSize: [256, 256],
+    });
+
+
+    var tilesource = new ol.source.TileImage({
+        tileUrlFunction: function (xyz, obj1, obj2) {
+            if (!xyz) {
+                return "";
+            }
+            var z = xyz[0];
+            var x = xyz[1];
+            var y = xyz[2];
+            return "http://rt1.map.gtimg.com/realtimerender?z=" + z + "&x=" + x + "&y=" + y + "&type=vector&style=0&v=1.1.2"
+        },
+        projection: projection,
+        tileGrid: tilegrid
+    });
+
+
+    var qqMapLayer=new ol.layer.Tile({
+        source: tilesource
+    });
+
+    var style = new ol.style.Style({
+        image : new ol.style.Circle({
+            radius : 15,
+            fill : new ol.style.Fill({
+                color: 'red'
+            })
+        }),
+
+    });
+
+    var vectorLayer = new ol.layer.Vector({
+        source : new ol.source.Vector(),
+        style : style
+
+    });
+
+    var map = new ol.Map({
+        target: 'map',
+        layers: [qqMapLayer,vectorLayer],
+        view: new ol.View({
+            center: ol.proj.transform([112.59, 28.12], 'EPSG:4326', 'EPSG:3857'),
+            projection: projection,
+            resolutions: resolutions,
+        })
+    });
+
+    var overlay = new ol.Overlay({
+        element: document.getElementById('people'),
+        offset:[0,1],
+        position:ol.proj.transform([112.69, 28.32], 'EPSG:4326', 'EPSG:3857')
+    });
+
+    var popuplay=new ol.Overlay({
+        element:document.getElementById('info'),
+        autoPan:true,
+        autoPanAnimation:{
+            duration:250
+        }
+    })
+
+
+
+    vectorLayer.getSource().addFeature(new ol.Feature({
+        geometry : new ol.geom.Point(ol.proj.transform([112.59, 28.12], 'EPSG:4326', 'EPSG:3857'))
+    }));
+
+    var clickSelect=new ol.interaction.Select({
+        condition:ol.events.condition.click
+    });
+    map.addInteraction(clickSelect);
+    clickSelect.on('select',function (event) {
+        if(event.selected.length>0){
+            var coordinate=event.selected[0].getGeometry().getCoordinates();
+            popuplay.setPosition(coordinate);
+        }
+    });
+
+
+    map.addOverlay(overlay);
+    map.addOverlay(popuplay);
+    map.getView().setZoom(11);
+    
+    function fnAAA() {
+       alert('fafafa');
+        //var element=document.getElementById('divAAA');
+        //element.style.position='absolute';
+    }
+
+</script>
+</body>
+</html>

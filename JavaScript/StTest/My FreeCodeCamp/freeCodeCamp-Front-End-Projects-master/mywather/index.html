@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" ng-app="myWeather" ng-controller="myCtrl">
+        <div class="row">
+            <header class="col-xs-12 col-md-12 text-center">
+                <a href="https://www.juhe.cn"><img src="https://www.juhe.cn/themes/v5/public/images/logo.png"></a>
+            </header>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <h4 class="text-center">当前实况天气</h4>
+                <p>
+                    <label>温度{{Data.sk.temp}}</label>
+                    <label>{{Data.sk.wind_direction}}</label>
+                    <label>{{Data.sk.wind_strength}}</label>
+                    <label>{{Data.sk.humidity}}</label>
+                    <label>{{Data.today.time}}</label>
+                </p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <h4 class="text-center">今天天气</h4>
+                <p>
+                    <label>{{Data.today.city}}</label>
+                    <label>{{Data.today.date_y}}</label>
+                    <label>{{Data.today.week}}</label>
+                    <label>{{Data.today.temperature}}</label>
+                    <label>{{Data.today.weather}}</label>
+                    <label>{{Data.today.wind}}</label>
+                </p>
+                <p>穿衣指数:{{Data.today.dressing_index}}</p>
+                <p>穿衣建议:{{Data.today.dressing_advice}}</p>
+                <p>紫外线强度:{{Data.today.uv_index}}</p>
+                <p>舒适度指数:{{Data.today.comfort_index}}</p>
+                <p>洗车指数:{{Data.today.wash_index}}</p>
+                <p>旅游指数:{{Data.today.travel_index}}</p>
+                <p>晨练指数:{{Data.today.exercise_index}}</p>
+                <p>干燥指数:{{Data.today.drying_index}}</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h4 class="text-center">未来7天天气</h4>
+            <div class="col-md-1" ng-repeat="item in items">
+                <div class="text-center">
+                    <h5>{{item.week}}</h5>
+                    <p>{{item.temperature}}</p>
+                    <p>{{item.weather}}</p>
+                    <p>{{item.wind}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js'></script>
+<script src="index.js"></script>
+</html>

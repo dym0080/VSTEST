@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QQ地图</title>
+    <link rel="stylesheet" href="../ol.css">
+    <script src="../ol.js"></script>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+<div id="map" style="width: 100%;height: 500px"></div>
+<div id="people"><img src="../images/p2-1.png"/></div>
+<script type="text/javascript">
+
+    var resolutions = [];
+
+    var projection = new ol.proj.get("EPSG:3857");
+    var projectionExtent = projection.getExtent();
+
+
+    var mapWidth3857 = ol.extent.getWidth(projectionExtent);
+    for (var i = 0; i < 18; i++) {
+        resolutions[i] = mapWidth3857 / (256 * Math.pow(2, i));
+    }
+
+    var tilegrid = new ol.tilegrid.TileGrid({
+        origin: ol.extent.getBottomLeft(projectionExtent),
+        resolutions: resolutions,
+        extent: projectionExtent,
+        tileSize: [256, 256],
+    });
+
+
+    var tilesource = new ol.source.TileImage({
+        tileUrlFunction: function (xyz, obj1, obj2) {
+            if (!xyz) {
+                return "";
+            }
+            var z = xyz[0];
+            var x = xyz[1];
+            var y = xyz[2];
+            return "http://rt1.map.gtimg.com/realtimerender?z=" + z + "&x=" + x + "&y=" + y + "&type=vector&style=0&v=1.1.2"
+        },
+        projection: projection,
+        tileGrid: tilegrid
+    });
+
+
+    var qqMapLayer=new ol.layer.Tile({
+        source: tilesource
+    });
+
+    var overlay = new ol.Overlay({
+        element: document.getElementById('people'),
+        offset:[0,1],
+        position:ol.proj.transform([112.59, 28.12], 'EPSG:4326', 'EPSG:3857')
+    });
+
+    var map = new ol.Map({
+        target: 'map',
+        layers: [qqMapLayer],
+        view: new ol.View({
+            center: ol.proj.transform([112.59, 28.12], 'EPSG:4326', 'EPSG:3857'),
+            projection: projection,
+            resolutions: resolutions,
+        })
+    });
+
+    map.addOverlay(overlay);
+    map.getView().setZoom(11);
+
+</script>
+</body>
+</html>

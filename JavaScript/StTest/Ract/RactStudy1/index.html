@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/babel">
+    var Greet = ReactDOM.createClass({
+        render: function() {
+            return <h1>Hello {this.props.name}</h1>;
+        }
+    });
+
+    ReactDOM.render(
+            <Greet name="Jack" />,
+            document.getElementById('container')
+    );
+</script>
+</body>
+</html>
