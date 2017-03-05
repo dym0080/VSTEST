@@ -87,62 +87,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpenLayersTest/demo2/index.html">
+      <file leaf-file-name="first.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/first.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+            <state relative-caret-position="238">
+              <caret line="14" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="qqIndex.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpenLayersTest/demo2/qqIndex.html">
+      <file leaf-file-name="watch.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/计算属性/watch.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="23" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="70" selection-end-column="7" />
+            <state relative-caret-position="238">
+              <caret line="14" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpenLayersTest/demo3/index.html">
+      <file leaf-file-name="example-1.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/条件渲染/example-1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="15" column="20" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpenLayersTest/demo3/index2.html">
+      <file leaf-file-name="example-2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/条件渲染/example-2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="204">
+              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="card.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/image/card.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="temp.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/条件渲染/temp.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="7" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="helloword.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nodetest/helloword.js">
+      <file leaf-file-name="repeat-object.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/条件渲染/repeat-object.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="85">
+              <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="html1.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/组件/html1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="7" selection-start-line="13" selection-start-column="4" selection-end-line="15" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="html2.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/组件/html2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -158,30 +177,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="f.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="f.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/My FreeCodeCamp/f.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="221">
+              <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ol.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpenLayersTest/ol.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="p1-1.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpenLayersTest/images/p1-1.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -198,13 +200,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/JavaScript面向对象编程指南练习代码/P3/p3.js" />
-        <option value="$PROJECT_DIR$/JavaScript面向对象编程指南练习代码/P4/p4.js" />
-        <option value="$PROJECT_DIR$/JavaScript面向对象编程指南练习代码/P5/p5.js" />
-        <option value="$PROJECT_DIR$/JavaScript面向对象编程指南练习代码/P6/p6.js" />
-        <option value="$PROJECT_DIR$/JavaScript面向对象编程指南练习代码/test.js" />
-        <option value="$PROJECT_DIR$/JavaScript面向对象编程指南练习代码/test2.js" />
-        <option value="$PROJECT_DIR$/JavaScript面向对象编程指南练习代码/P7/p7.js" />
         <option value="$PROJECT_DIR$/JavaScript面向对象编程指南练习代码/testhtml.html" />
         <option value="$PROJECT_DIR$/JavaScript面向对象编程指南练习代码/P8/p8.js" />
         <option value="$PROJECT_DIR$/Ract/RactStudy1/build/JSXTransformer.js" />
@@ -249,6 +244,13 @@
         <option value="$PROJECT_DIR$/OpenLayersTest/demo3/qqIndex.html" />
         <option value="$PROJECT_DIR$/OpenLayersTest/demo3/index.html" />
         <option value="$PROJECT_DIR$/OpenLayersTest/demo3/index2.html" />
+        <option value="$PROJECT_DIR$/vuetest2/条件渲染/ifhtml.html" />
+        <option value="$PROJECT_DIR$/vuetest2/条件渲染/example-1.html" />
+        <option value="$PROJECT_DIR$/vuetest2/条件渲染/example-2.html" />
+        <option value="$PROJECT_DIR$/vuetest2/条件渲染/temp.html" />
+        <option value="$PROJECT_DIR$/vuetest2/条件渲染/repeat-object.html" />
+        <option value="$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/组件/html1.html" />
+        <option value="$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/组件/html2.html" />
       </list>
     </option>
   </component>
@@ -325,7 +327,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="OpenLayersTest" />
+              <option name="myItemId" value="vuetest(vuejs官网学习时练习代码)" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -339,7 +341,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="My FreeCodeCamp" />
+              <option name="myItemId" value="vuetest(vuejs官网学习时练习代码)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="组件" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vuetest(vuejs官网学习时练习代码)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="条件渲染" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -362,28 +386,31 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\mygit\VSTEST\JavaScript\StTest\vuetest(vuejs官网学习时练习代码)\组件" />
       <recent name="D:\work\mygit\VSTEST\JavaScript\StTest\OpenLayersTest" />
       <recent name="D:\work\mygit\VSTEST\JavaScript\StTest\OpenLayersTest\demo3" />
       <recent name="D:\work\mygit\VSTEST\JavaScript\StTest\OpenLayersTest\demo2" />
       <recent name="D:\work\mygit\VSTEST\JavaScript\StTest\vuetest2" />
-      <recent name="D:\work\mygit\VSTEST\JavaScript\StTest\My FreeCodeCamp\freeCodeCamp-Front-End-Projects-master" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\work\mygit\VSTEST\JavaScript\StTest\OpenLayersTest" />
       <recent name="D:\work\mygit\VSTEST\JavaScript\StTest\OpenLayersTest\demo1" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index2.html">
-    <configuration default="false" name="index.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/StTest/OpenLayersTest/demo2/index.html">
+  <component name="RunManager" selected="JavaScript Debug.html2.html">
+    <configuration default="false" name="example-2.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/StTest/vuetest2/条件渲染/example-2.html">
       <method />
     </configuration>
-    <configuration default="false" name="index2.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/StTest/OpenLayersTest/demo3/index2.html">
+    <configuration default="false" name="temp.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/StTest/vuetest2/条件渲染/temp.html">
       <method />
     </configuration>
-    <configuration default="false" name="qqIndex.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/StTest/OpenLayersTest/demo2/qqIndex.html">
+    <configuration default="false" name="repeat-object.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/StTest/vuetest2/条件渲染/repeat-object.html">
       <method />
     </configuration>
-    <configuration default="false" name="qqIndex.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/StTest/OpenLayersTest/demo3/qqIndex.html">
+    <configuration default="false" name="html1.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/StTest/vuetest(vuejs官网学习时练习代码)/组件/html1.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="html2.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/StTest/vuetest(vuejs官网学习时练习代码)/组件/html2.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -446,19 +473,21 @@
     <configuration default="false" name="index.html (2)" type="JavascriptDebugType" factoryName="JavaScript Debug" nameIsGenerated="true" uri="http://localhost:63342/StTest/OpenLayersTest/demo3/index.html">
       <method />
     </configuration>
-    <list size="5">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html (2)" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index2.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.qqIndex.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.qqIndex.html (1)" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.example-2.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.temp.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.repeat-object.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.html1.html" />
+      <item index="5" class="java.lang.String" itemvalue="JavaScript Debug.html2.html" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index2.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.qqIndex.html (1)" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.qqIndex.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.html2.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.html1.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.repeat-object.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.temp.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.example-2.html" />
       </list>
     </recent_temporary>
   </component>
@@ -493,15 +522,15 @@
       <workItem from="1488259402573" duration="5216000" />
       <workItem from="1488336068806" duration="6271000" />
       <workItem from="1488463490297" duration="13090000" />
-      <workItem from="1488610702067" duration="18643000" />
+      <workItem from="1488610702067" duration="22879000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127424000" />
+    <option name="totallyTimeSpent" value="131660000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21010248" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -540,24 +569,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/My FreeCodeCamp/freeCodeCamp-Front-End-Projects-master/freeCodeCamp-Front-End-Projects-master/8.Random Quote Machine/normalize.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1428">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/My FreeCodeCamp/freeCodeCamp-Front-End-Projects-master/freeCodeCamp-Front-End-Projects-master/8.Random Quote Machine/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/My FreeCodeCamp/random-quote-machine/css/AS.CSS" />
-    <entry file="file://$PROJECT_DIR$/My FreeCodeCamp/random-quote-machine/js/s's.js" />
-    <entry file="file://$PROJECT_DIR$/My FreeCodeCamp/random-quote-machine/css/ss.css" />
-    <entry file="file://$PROJECT_DIR$/My FreeCodeCamp/random-quote-machine/css/style.css" />
     <entry file="file://$PROJECT_DIR$/My FreeCodeCamp/random-quote-machine/scss/style.scss" />
     <entry file="file://$PROJECT_DIR$/My FreeCodeCamp/random-quote-machine/index.html" />
     <entry file="file://$PROJECT_DIR$/My FreeCodeCamp/random-quote-machine/js/index.js" />
@@ -666,7 +677,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vuetest2/vue.js">
+    <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/vue.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="9163" column="10" selection-start-line="9163" selection-start-column="10" selection-end-line="9163" selection-end-column="10" />
@@ -687,7 +698,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vuetest2/index.html">
+    <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
@@ -695,7 +706,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vuetest2/test.html">
+    <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="7" />
@@ -703,23 +714,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vuetest2/first.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuetest2/计算属性/watch.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuetest2/计算属性/watch2.html">
+    <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/计算属性/watch2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
@@ -727,7 +722,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vuetest2/计算属性/watch-example.html">
+    <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/计算属性/watch-example.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="35" column="64" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
@@ -866,8 +861,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/My FreeCodeCamp/f.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/first.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/计算属性/watch.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/条件渲染/example-1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="20" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/条件渲染/example-2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/条件渲染/repeat-object.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/条件渲染/temp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/组件/html1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="7" selection-start-line="13" selection-start-column="4" selection-end-line="15" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuetest(vuejs官网学习时练习代码)/组件/html2.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
           <folding />
         </state>
       </provider>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>repeat-object</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<ul id="sss">
+    <li v-for="(key,index1,va) in object">{{index1}}-{{key}}-{{va}}</li>
+</ul>
+</body>
+<script type="text/javascript">
+    var app=new Vue({
+        el:"#sss",
+        data:{
+            object:{
+                FirstName:'Duan',
+                LastName:'yongming',
+                Age:33
+            }
+        }
+    })
+</script>
+</html>

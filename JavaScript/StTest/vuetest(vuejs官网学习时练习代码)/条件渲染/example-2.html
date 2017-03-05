@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example-2</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<ul id="example-2">
+    <li v-for="(item,index) of items">
+       {{pas}}- {{index}}-{{item.message}}
+    </li>
+</ul>
+</body>
+<script type="text/javascript">
+    var app=new Vue({
+        el:"#example-2",
+        data:{
+            pas:'saf',
+            items:[
+                {message:"Foo"},
+                {message:"Bar"}
+            ]
+        }
+    })
+</script>
+</html>

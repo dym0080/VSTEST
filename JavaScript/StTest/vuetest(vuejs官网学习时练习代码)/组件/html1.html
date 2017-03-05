@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>component</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <my-component></my-component>
+</div>
+</body>
+<script type="text/javascript">
+    Vue.component('my-component',{
+        template:'<p>我的自定义组件</p>'
+    });
+    var app=new Vue({
+        el:"#demo"
+    });
+</script>
+</html>
