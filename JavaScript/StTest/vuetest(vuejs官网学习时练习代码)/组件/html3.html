@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>局部注册</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <table>
+        <tr is="my-component"></tr>
+    </table>
+</div>
+</body>
+<script type="text/javascript">
+
+    //必需放在实例前注册
+    var Child={
+        template:'<p>局部注册组件</p>'
+    };
+    var app=new Vue({
+        el:"#demo",
+        components:{
+            'my-component':Child
+        }
+    });
+</script>
+</html>

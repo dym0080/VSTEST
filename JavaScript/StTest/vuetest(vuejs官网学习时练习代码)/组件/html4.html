@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html4</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <my-component></my-component>
+    <my-component></my-component>
+    <my-component></my-component>
+</div>
+</body>
+<script type="text/javascript">
+
+    var data={
+        count:0
+    }
+    //data必需是一个函数且必需是返回一个对象
+    Vue.component('my-component',{
+        template:'<button v-on:click="count++">{{count}}</button>',
+        data:function () {
+            return {
+                count:0
+            };
+        }
+    })
+
+    var app=new Vue({
+        el:"#demo"
+    });
+</script>
+</html>
